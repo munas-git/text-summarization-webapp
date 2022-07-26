@@ -1,0 +1,22 @@
+## What is text summarization? ##
+- Text summarization refers to the technique of shortening long pieces of text while witholding useful information contained in the entire text.
+
+
+## Why have a document summarizer? ##
+- Summarization reeduces reading time
+- Automatic summarization algorithms are less bias than human summarizers therefore, they capture and preserve the true essence of a document.
+- Automatic summarizerization systems helps process more documents within short time.
+
+## Processes involved ##
+- Text cleaning
+- Sentence tokenization 
+- Word tokenization
+- Word-frequency table
+- Calculating sentences scores with word-frequency table
+- Extracting top n most important sentences
+- Concatenation of top n most important sentences
+- Transformation of new document
+- Building and saving pipeline / wraping functions into class.
+
+
+## What is plagiarism? ##
