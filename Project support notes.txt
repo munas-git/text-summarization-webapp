@@ -14,9 +14,9 @@
 - Word-frequency table
 - Calculating sentences scores with word-frequency table
 - Extracting top n most important sentences
+- Organize top n messages in order ofappearance in oroginal text
 - Concatenation of top n most important sentences
 - Transformation of new document
-- Building and saving pipeline / wraping functions into class.
 
 
 ## What is plagiarism? ##
