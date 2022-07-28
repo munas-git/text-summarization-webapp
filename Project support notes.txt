@@ -11,12 +11,16 @@
 - Text cleaning
 - Sentence tokenization 
 - Word tokenization
-- Word-frequency table
-- Calculating sentences scores with word-frequency table
+- Normalized word-frequency dictionary
+- Calculating sentences scores with ormalized word-frequency dictionary
 - Extracting top n most important sentences
-- Organize top n messages in order ofappearance in oroginal text
+- Organize top n messages in order of appearance in oroginal text
 - Concatenation of top n most important sentences
-- Transformation of new document
+- Transformation of new string
 
 
 ## What is plagiarism? ##
+
+
+
+#### Links to resources used. ####
