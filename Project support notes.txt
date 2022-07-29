@@ -19,8 +19,8 @@
 - Transformation of new string
 
 
-## What is plagiarism? ##
-
+## Limitations of the summarizer ##
+- It does not take into consideration reported speech - "This is reported speech", it also summarizs the content of such speach.
 
 
 #### Links to resources used. ####
