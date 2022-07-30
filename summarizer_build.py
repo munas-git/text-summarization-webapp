@@ -177,6 +177,7 @@ def string_synonym_swap(text):
     text_list = text.split()
     
     for text in text_list:
+        text = text.replace('”', '').replace('“', '') # This helps to conquire the problem behing reported speech "This is reported speech content being altered."
         try:
             if text.islower() and len(text) >= 3:
                 synonyms.append(words_synonyms[text])
