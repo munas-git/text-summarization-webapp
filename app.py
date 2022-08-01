@@ -12,12 +12,13 @@ def first():
         print(name)
         return redirect(url_for('second', txt=name))
     else:
-        return render_template('home.html')
+        return render_template('test.html')
 
 
 @app.route('/<txt>/', methods=['POST', 'GET'])
 def second(txt):
-    return f'This is what you previously entered {txt}'
+    
+    return render_template('test.html', result= txt)
 
 
 # run the server. 
