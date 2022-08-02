@@ -351,6 +351,7 @@ words_synonyms = {
 'foremost': 'paramount',
 'formation': 'creation',
 'forsake': 'abjure',
+'forsaken': 'abandoned',
 'foundling': 'urchin',
 'fracture': 'break',
 'frantic': 'violent',
