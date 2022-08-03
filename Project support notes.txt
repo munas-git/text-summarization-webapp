@@ -20,7 +20,7 @@
 
 
 ## Limitations of the summarizer ##
-- 
+- It can not process text documents with image data.
 
 
 #### Links to resources used. ####
