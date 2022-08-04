@@ -7,7 +7,7 @@ stop_words = stopwords.words('english')
 from string import punctuation
 punctuation = punctuation + '’'
 from words_synonyms import words_synonyms
-
+text_topic = '' # List that will contain string topics.
 
 class Summarizer():
     '''
@@ -21,7 +21,6 @@ class Summarizer():
     def __init__ (self, text, churn_level):
         self.text = text
         self.churn_level = float(churn_level)
-        self.text_topic = '' # List that will contain string topics.
 
     
     def word_sentence_tokenizer(self):
@@ -44,66 +43,66 @@ class Summarizer():
         return(sent_tokens, word_tokens)
 
     
-    def word_count_vec(self, word_tokens):
-        '''
-         This function produces a dictionary containing the normalized scores of each word tokens in a list
+    # def word_count_vec(self, word_tokens):
+    #     '''
+    #      This function produces a dictionary containing the normalized scores of each word tokens in a list
          
-         Parameters:
+    #      Parameters:
          
-         > word_tokens = [] # List of words
+    #      > word_tokens = [] # List of words
          
-         return:
+    #      return:
 
-         word_frequency_scores : Dictionary of word tokens and their normalized scores
+    #      word_frequency_scores : Dictionary of word tokens and their normalized scores
 
-        '''
-        clean_words = []
-        word_frequency_scores = {}
+    #     '''
+    #     clean_words = []
+    #     word_frequency_scores = {}
 
-        # Looping through to calculate word frequencies
-        for word in word_tokens:
-            if word.strip().lower() not in stop_words:
-                if word not in punctuation:
-                    clean_words.append(word)
-                    if word not in word_frequency_scores:
-                        word_frequency_scores[word] = 1
-                    else:
-                        word_frequency_scores[word] += 1
+    #     # Looping through to calculate word frequencies
+    #     for word in word_tokens:
+    #         if word.strip().lower() not in stop_words:
+    #             if word not in punctuation:
+    #                 clean_words.append(word)
+    #                 if word not in word_frequency_scores:
+    #                     word_frequency_scores[word] = 1
+    #                 else:
+    #                     word_frequency_scores[word] += 1
         
-        # Looping through to normalize word_frequency_scores using linear / minmax scaler
-        max_frequency = max(word_frequency_scores.values())
-        min_frequency = min(word_frequency_scores.values())
-        for word in word_frequency_scores.keys():
-            word_frequency_scores[word] = (word_frequency_scores[word] - min_frequency) / (max_frequency - min_frequency)
+    #     # Looping through to normalize word_frequency_scores using linear / minmax scaler
+    #     max_frequency = max(word_frequency_scores.values())
+    #     min_frequency = min(word_frequency_scores.values())
+    #     for word in word_frequency_scores.keys():
+    #         word_frequency_scores[word] = (word_frequency_scores[word] - min_frequency) / (max_frequency - min_frequency)
 
-        topic = max(word_frequency_scores, key=word_frequency_scores.get)
-        self.text_topic += topic
-        return(word_frequency_scores)
+    #     topic = max(word_frequency_scores, key=word_frequency_scores.get)
+    #     self.text_topic += topic
+    #     return(word_frequency_scores)
     
 
-    def sentence_scoring(self, sentence_tokens, word_frequency_scores):
-        '''
-        This function calculates scores for each sentence and returns a dictionary containing sentence, score and order.
+    # def sentence_scoring(self, sentence_tokens, word_frequency_scores):
+    #     '''
+    #     This function calculates scores for each sentence and returns a dictionary containing sentence, score and order.
         
-        Parameters:
+    #     Parameters:
 
-        > sentence_tokens: List containing sentence tokens
-        > word_frequency_scores: Dictionary containing word tokens and their (normalized) scores
+    #     > sentence_tokens: List containing sentence tokens
+    #     > word_frequency_scores: Dictionary containing word tokens and their (normalized) scores
 
-        return:
+    #     return:
 
-        sentence_scores : Dictionary of sentences and their scores.
+    #     sentence_scores : Dictionary of sentences and their scores.
 
-        '''
-        sentence_scores = {}
-        for sentence in sentence_tokens:
-            for word in word_tokenize(sentence, 'english'):
-                if word.lower() in word_frequency_scores.keys():
-                    if sentence not in sentence_scores.keys():
-                        sentence_scores[sentence] = word_frequency_scores[word.lower()]
-                    else:
-                        sentence_scores[sentence] += word_frequency_scores[word.lower()]
-        return(sentence_scores)
+    #     '''
+    #     sentence_scores = {}
+    #     for sentence in sentence_tokens:
+    #         for word in word_tokenize(sentence, 'english'):
+    #             if word.lower() in word_frequency_scores.keys():
+    #                 if sentence not in sentence_scores.keys():
+    #                     sentence_scores[sentence] = word_frequency_scores[word.lower()]
+    #                 else:
+    #                     sentence_scores[sentence] += word_frequency_scores[word.lower()]
+    #     return(sentence_scores)
 
         
     def summary_sorting(self, sentence_scores):
@@ -140,6 +139,69 @@ class Summarizer():
         final_summary_list = [sentence[0] for sentence in order_sorted_sentences]
         final_sorted_summary_string = ' '.join(final_summary_list)
         return(final_sorted_summary_string)
+
+
+###############
+def word_count_vec(word_tokens):
+        '''
+         This function produces a dictionary containing the normalized scores of each word tokens in a list
+         
+         Parameters:
+         
+         > word_tokens = [] # List of words
+         
+         return:
+
+         word_frequency_scores : Dictionary of word tokens and their normalized scores
+
+        '''
+        clean_words = []
+        word_frequency_scores = {}
+
+        # Looping through to calculate word frequencies
+        for word in word_tokens:
+            if word.strip().lower() not in stop_words:
+                if word not in punctuation:
+                    clean_words.append(word)
+                    if word not in word_frequency_scores:
+                        word_frequency_scores[word] = 1
+                    else:
+                        word_frequency_scores[word] += 1
+        
+        # Looping through to normalize word_frequency_scores using linear / minmax scaler
+        max_frequency = max(word_frequency_scores.values())
+        min_frequency = min(word_frequency_scores.values())
+        for word in word_frequency_scores.keys():
+            word_frequency_scores[word] = (word_frequency_scores[word] - min_frequency) / (max_frequency - min_frequency)
+
+        topic = max(word_frequency_scores, key=word_frequency_scores.get)
+        text_topic += topic
+        return(word_frequency_scores)
+
+
+def sentence_scoring(sentence_tokens, word_frequency_scores):
+        '''
+        This function calculates scores for each sentence and returns a dictionary containing sentence, score and order.
+        
+        Parameters:
+
+        > sentence_tokens: List containing sentence tokens
+        > word_frequency_scores: Dictionary containing word tokens and their (normalized) scores
+
+        return:
+
+        sentence_scores : Dictionary of sentences and their scores.
+
+        '''
+        sentence_scores = {}
+        for sentence in sentence_tokens:
+            for word in word_tokenize(sentence, 'english'):
+                if word.lower() in word_frequency_scores.keys():
+                    if sentence not in sentence_scores.keys():
+                        sentence_scores[sentence] = word_frequency_scores[word.lower()]
+                    else:
+                        sentence_scores[sentence] += word_frequency_scores[word.lower()]
+        return(sentence_scores)
 
 
 def extract_txt(document):
