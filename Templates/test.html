@@ -28,7 +28,7 @@
 
     <section class="parent">
     <div class = "div-1">
-        <textarea placeholder="Enter text for summary... " name="text" rows="20" cols="65"></textarea>
+        <textarea placeholder="Enter text for summary... " name="original_text" rows="20" cols="65">{{original}}</textarea>
     </div>
     </section>
 
@@ -38,8 +38,13 @@
     </form>
 
     <p>
-        <center><h3>Summary appears here....</h3></center>
-        <h4>{{final_summary}}</h4>
+        <center><h2>Summary appears here....</h2></center>
+        <h3>The topic of the body of text is "{{top}}"</h3>
+        <p></p>
+        <h4>{{final_summ}}</h4>
     </p>
+
+    <h4>Original text here</h4>
+    <textarea>{{original}}</textarea>
 </body>
 </html>

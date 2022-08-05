@@ -152,7 +152,7 @@ def word_count_vec(word_tokens):
          
          return:
 
-         word_frequency_scores : Dictionary of word tokens and their normalized scores
+         word_frequency_scores : Tuple containing Dictionary of word tokens and their normalized scores and the most common word.
 
         '''
         clean_words = []
@@ -175,8 +175,8 @@ def word_count_vec(word_tokens):
             word_frequency_scores[word] = (word_frequency_scores[word] - min_frequency) / (max_frequency - min_frequency)
 
         topic = max(word_frequency_scores, key=word_frequency_scores.get)
-        text_topic += topic
-        return(word_frequency_scores)
+        return(word_frequency_scores, topic)
+        
 
 
 def sentence_scoring(sentence_tokens, word_frequency_scores):

@@ -276,6 +276,7 @@ words_synonyms = {
 'displeasure': 'resentment',
 'disposition': 'inclination',
 'dissimilar': 'contrary',
+'distinguish': 'differentiate',
 'distress': 'trouble',
 'do': 'execute',
 'docile': 'pliable',
