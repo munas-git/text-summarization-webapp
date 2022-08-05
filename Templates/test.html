@@ -10,8 +10,16 @@
 
         .parent{
             display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
         }
-
+        .div-1{
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            display: flex;
+        }
     </style>
 
 </head>
@@ -22,15 +30,13 @@
     <div class = "div-1">
         <textarea placeholder="Enter text for summary... " name="text" rows="20" cols="65"></textarea>
     </div>
-
-    <div class = "div-2">
-        <textarea placeholder="Summary appears here... " rows="20" cols="65"></textarea>
-    </div>
-    </section>
-    <input type="submit" value="Summarize">
-    </form>
-
     <p>
+    <input type="submit" value="Summarize">
+    </p>
+    </section>
+    </form>
+    <p>
+        <center><h3>Summary appears here....</h3></center>
         <h3>This is your detail {{result}}</h3>
     </p>
 </body>
