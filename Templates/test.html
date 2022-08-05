@@ -20,6 +20,9 @@
             justify-content: center;
             display: flex;
         }
+        .text_area_2{
+            border-color: white;
+        }
     </style>
 
 </head>
@@ -28,7 +31,7 @@
 
     <section class="parent">
     <div class = "div-1">
-        <textarea placeholder="Enter text for summary... " name="original_text" rows="20" cols="65">{{original}}</textarea>
+        <textarea placeholder="Enter text for summary... " name="original_text" rows="22" cols="70">{{original}}</textarea>
     </div>
     </section>
 
@@ -41,10 +44,11 @@
         <center><h2>Summary appears here....</h2></center>
         <h3>The topic of the body of text is "{{top}}"</h3>
         <p></p>
-        <h4>{{final_summ}}</h4>
+        <center>
+        <h4>
+        <textarea class = text_area_2 rows="20" cols="90" readonly >{{final_summ}}</textarea>
+        </h4>
+        </center>
     </p>
-
-    <h4>Original text here</h4>
-    <textarea>{{original}}</textarea>
 </body>
 </html>
