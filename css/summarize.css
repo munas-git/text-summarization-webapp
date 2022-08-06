@@ -1,0 +1,27 @@
+.parent{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+.div-1{
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    font:13px Tahoma, cursive;
+}
+.text_area_2{
+    /* border-style: solid; */
+    /* border-color: white; */
+    border: none;
+    font:13px Tahoma, cursive;
+    width:80%;
+    line-height:1.5;
+    font-size: medium;
+}
+input{
+    font-family: Shanti;
+    line-height:1.5;
+    font-size: 1.3em;
+}
