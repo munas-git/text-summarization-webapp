@@ -19,16 +19,18 @@
             align-content: center;
             justify-content: center;
             display: flex;
+            font:13px Tahoma, cursive;
         }
         .text_area_2{
-            /* border-style: none; */
-            /* overflow: auto; */
-            border: ridge 2px;
-            padding: 5px;
-            width: 50em;
-            min-height: 10em;
-            overflow-y: auto;
-            display: flex;
+            border-style: none;
+            overflow: auto;
+            border-color: white;
+            font:13px Tahoma, cursive;
+            width:100%;
+            resize: none;
+            /* height: 40%; */
+            /* max-height: 100%; */
+            line-height:1.5
         }
     </style>
 
@@ -39,7 +41,7 @@
 
     <section class="parent">
     <div class = "div-1">
-        <textarea placeholder="Enter text for summary... " name="original_text" rows="22" cols="70">{{original_text}}</textarea>
+        <textarea placeholder="Enter text for summary... " name="original_text" rows="25" cols="70" minlength="30">{{original_text}}</textarea>
     </div>
     </section>
 
@@ -67,17 +69,24 @@
             <h3>Summary appears Below.</h3>
 
             <h4>
-            <textarea class = text_area_2   placeholder="Summary appears here...." >{{final_summary}}</textarea>
-            <!-- readonly -->
+            <textarea class = text_area_2 id="text_area_summary" readonly placeholder="Summary appears here...."  >{{final_summary}}</textarea>
+            <!-- cols="60" rows= '30' -->
             <!-- cols="90" -->
             </h4>
-
-            <h2>
-                The length of original text is: {{original_text_length}}
-                <br>
-                The length of summary is: {{summary_length}}
-            </h2>
         </center>
     </p>
+
+
+    <!-- This script handles auro adjusting summary textarea height...-->
+    <script>
+        const textarea = document.getElementById("text_area_summary");
+        textarea.style.cssText = `height: ${textarea.scrollHeight}px; overflow-y:hidden`;
+
+        textarea.addEventListener("input", function(){
+            this.style.height = "auto";
+            this.style.height = `${this.scrollHeight}px`;
+        })
+    </script>
+
 </body>
 </html>
