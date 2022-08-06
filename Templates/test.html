@@ -21,33 +21,62 @@
             display: flex;
         }
         .text_area_2{
-            border-color: white;
+            /* border-style: none; */
+            /* overflow: auto; */
+            border: ridge 2px;
+            padding: 5px;
+            width: 50em;
+            min-height: 10em;
+            overflow-y: auto;
+            display: flex;
         }
     </style>
 
 </head>
 <body>
-    <form method="POST" action="#">
+    <form method="POST">
+
 
     <section class="parent">
     <div class = "div-1">
-        <textarea placeholder="Enter text for summary... " name="original_text" rows="22" cols="70">{{original}}</textarea>
+        <textarea placeholder="Enter text for summary... " name="original_text" rows="22" cols="70">{{original_text}}</textarea>
     </div>
     </section>
 
     <p>
-        <center><input type="submit" value="Summarize"></center>
+        <center>Select Summary type</center>
+        <br>
+        <center>
+            <input type="radio" name="churn_level" id="short" value="0.3" required>
+            <label for="short">Short</label>
+            <input type="radio" name="churn_level" id="medium" value="0.5">
+            <label for="medium">Medium</label>
+            <input type="radio" name="churn_level" id="long" value="0.7">
+            <label for="long">Long</label>
+            <br>
+            <br>
+            <input type="submit" value="Summarize">
+        </center>
     </p>
     </form>
 
     <p>
-        <center><h2>Summary appears here....</h2></center>
-        <h3>The topic of the body of text is "{{top}}"</h3>
-        <p></p>
+        <!-- <p></p> -->
         <center>
-        <h4>
-        <textarea class = text_area_2 rows="20" cols="90" readonly >{{final_summ}}</textarea>
-        </h4>
+
+            <h3>Summary appears Below.</h3>
+
+            <h4>
+            <textarea class = text_area_2   placeholder="Summary appears here...." >{{final_summary}}</textarea>
+            <!-- readonly -->
+            <!-- cols="90" -->
+            </h4>
+
+            <h2>
+                The length of original text is: {{original_text_length}}
+                <br>
+                The length of summary is: {{summary_length}}
+            </h2>
         </center>
     </p>
 </body>

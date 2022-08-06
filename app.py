@@ -10,13 +10,14 @@ def first():
     if request.method == 'GET':
         return render_template('test.html')
     elif request.method == 'POST':
-        default_churn = 60
+        # default_churn = 0.6
 
-        # Getting original text data from form.
-        original_text = request.form.get('original_text', None)
+        # Getting original text data and churn_level from form.
+        original_text = request.form.get('original_text')
+        churn_level = float(request.form.get('churn_level'))
 
         # Initializing summerizer.
-        summarize = Summarizer(original_text, default_churn)
+        summarize = Summarizer(original_text, churn_level)
 
         # Converting original text to word and sentence tokens.
         word_sentence_tokens = summarize.word_sentence_tokenizer()
@@ -39,7 +40,11 @@ def first():
         # Swapping selected synonyms and returning final_summary string.
         final_summary = string_synonym_swap(sorted_summary)
 
-        return render_template('test.html', final_summ = final_summary, top = topic, original = original_text)
+        # Getting final details
+        summary_length = len(final_summary)
+        original_text_length = len(original_text)
+
+        return render_template('test.html', final_summary = final_summary, topic = topic, original_text = original_text, summary_length = summary_length, original_text_length = original_text_length)
 
 
 # run the server. 
