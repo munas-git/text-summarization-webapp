@@ -10,44 +10,28 @@
 
 <body>
     <form method="POST">
-
-
-    <section class="parent">
-    <div class = "div-1">
-        <textarea placeholder="Enter text for summary... " name="original_text" rows="25" cols="70" minlength="30">{{original_text}}</textarea>
-    </div>
-    </section>
-
-    <p>
-        <center>Select Summary type</center>
-        <br>
-        <center>
+        <div class="original-text-section">
+                <textarea class="text_area_1" placeholder="Enter text for summary... " name="original_text" rows="25" cols="70" minlength="60">{{original_text}}</textarea>
+        </div>
+        <div class="summary-type-select">Select Summary type</div>
+        <div class="buttons-section">
             <input type="radio" name="churn_level" id="short" value="0.3" required>
             <label for="short">Short</label>
             <input type="radio" name="churn_level" id="medium" value="0.5">
             <label for="medium">Medium</label>
             <input type="radio" name="churn_level" id="long" value="0.7">
             <label for="long">Long</label>
-            <br>
-            <br>
-            <input type="submit" value="Summarize">
-        </center>
-    </p>
+        </div>
+        <br>
+        <div class="submit-button-div">
+            <input class="summarize-button" type="submit" value="Summarize">
+        </div>
     </form>
-
-    <p>
-        <!-- <p></p> -->
-        <center>
-
-            <h3>Summary appears Below.</h3>
-
-            <h4>
-            <textarea class = text_area_2 id="text_area_summary" readonly placeholder="Summary appears here...."  >{{final_summary}}</textarea>
-            <!-- cols="60" rows= '30' -->
-            <!-- cols="90" -->
-            </h4>
-        </center>
-    </p>
+    <br>
+    <br>
+    <div class="summary-intro">
+        <textarea class = text_area_2 id="text_area_summary" readonly placeholder="Summary appears here...."  >{{final_summary}}</textarea>
+    </div>
 
 
     <!-- This script handles auto adjusting summary textarea height...-->

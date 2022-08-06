@@ -1,19 +1,22 @@
-.parent{
+body{
+    background-color: rgba(207, 206, 206, 0.644);
+}
+.original-text-section{
     display: flex;
     align-items: center;
     align-content: center;
     justify-content: center;
 }
-.div-1{
+.text_area_1{
+    border-radius: 10px;
+}
+.buttons-section{
+    display: flex;
     align-items: center;
     align-content: center;
     justify-content: center;
-    display: flex;
-    font:13px Tahoma, cursive;
 }
 .text_area_2{
-    /* border-style: solid; */
-    /* border-color: white; */
     border: none;
     font:13px Tahoma, cursive;
     width:80%;
@@ -25,7 +28,42 @@ input{
     line-height:1.5;
     font-size: 1.3em;
 }
+.submit-button-div{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+.summarize-button{
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    padding: 10px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.summary-type-select{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font-family: Shanti;
+    font-size: 1.4em;
 
-body{
-    background-color: blueviolet;
+}
+.summary-intro{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+.summary-intro{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
 }
