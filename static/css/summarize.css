@@ -25,3 +25,7 @@ input{
     line-height:1.5;
     font-size: 1.3em;
 }
+
+body{
+    background-color: blueviolet;
+}

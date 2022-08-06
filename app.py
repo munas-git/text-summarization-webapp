@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route('/summarize/', methods= ['GET', 'POST'])
 def first():
     if request.method == 'GET':
-        return render_template('test.html')
+        return render_template('summarize.html')
     elif request.method == 'POST':
         # default_churn = 0.6
 
@@ -44,7 +44,7 @@ def first():
         summary_length = len(final_summary)
         original_text_length = len(original_text)
 
-        return render_template('test.html', final_summary = final_summary, topic = topic, original_text = original_text, summary_length = summary_length, original_text_length = original_text_length)
+        return render_template('summarize.html', final_summary = final_summary, topic = topic, original_text = original_text, summary_length = summary_length, original_text_length = original_text_length)
 
 
 # run the server. 
