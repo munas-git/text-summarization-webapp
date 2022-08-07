@@ -44,8 +44,8 @@ def first():
                 original_text_length = len(original_text)
 
                 return render_template('summarize.html', final_summary = final_summary, topic = topic, original_text = original_text, summary_length = summary_length, original_text_length = original_text_length)
-            except ZeroDivisionError:
-                message_1 = "Please enter text with greater length"
+            except Exception:
+                message_1 = "Please enter text with greater length or make sure text has reasonable content for summarization."
                 message_2 = "Undetermined"
                 original_text_length = len(original_text)
                 return render_template('summarize.html', final_summary = message_1, topic = message_2, original_text = original_text, summary_length = message_2, original_text_length = message_2)
