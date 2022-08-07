@@ -23,6 +23,7 @@
 - It can not process text documents with image data.
 
 ## Key notes to remember ##
-- In order to handle internal server error, I added a Try, Except to return 'Please enter enough text' if there is a zero division error.
+- In order to handle internal server error resulting from zero division or other possible exceptions, I added a Try - Except block which returns a message "Please enter text with greater length or make sure text has reasonable content for summarization."
+
 
 #### Links to resources used. ####
