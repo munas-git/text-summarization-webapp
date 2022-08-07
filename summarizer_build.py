@@ -160,8 +160,7 @@ def extract_txt(document):
 def string_synonym_swap(text):
     """
     This function converts strings to their synonyms    
-    It also returns text containing CAPITAL letters or ending with 's', 'ing' , 'ed' as they are,
-    including some specified texts whose synonyms are relative to how they appear in sentences.
+    It also returns text containing CAPITAL letters as they are.
 
     Parameters:
     

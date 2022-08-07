@@ -22,5 +22,7 @@
 ## Limitations of the summarizer ##
 - It can not process text documents with image data.
 
+## Key notes to remember ##
+- In order to handle internal server error, I added a Try, Except to return 'Please enter enough text' if there is a zero division error.
 
 #### Links to resources used. ####
