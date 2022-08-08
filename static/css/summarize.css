@@ -45,7 +45,6 @@ input{
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
-    cursor: pointer;
 }
 .summary-type-select{
     display: flex;
@@ -53,7 +52,6 @@ input{
     justify-content: center;
     font-family: Shanti;
     font-size: 1.4em;
-
 }
 .summary-intro{
     display: flex;
@@ -66,4 +64,7 @@ input{
     align-items: center;
     align-content: center;
     justify-content: center;
+}
+input{
+    cursor: pointer;
 }

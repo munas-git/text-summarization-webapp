@@ -1,12 +1,13 @@
 from summarizer_build import *
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, flash
 
 
 app = Flask(__name__)
+app.secret_key = 'forsummary'
 
 
 @app.route('/summarize/', methods= ['GET', 'POST'])
-def first():
+def summarize():
     if request.method == 'GET':
         return render_template('summarize.html')
     elif request.method == 'POST':
@@ -47,8 +48,8 @@ def first():
             except Exception:
                 message_1 = "Please enter text with greater length or make sure text has reasonable content for summarization."
                 message_2 = "Undetermined"
-                original_text_length = len(original_text)
-                return render_template('summarize.html', final_summary = message_1, topic = message_2, original_text = original_text, summary_length = message_2, original_text_length = message_2)
+                flash(message_1)
+                return render_template('summarize.html', final_summary = message_2, topic = message_2, original_text = original_text, summary_length = message_2, original_text_length = message_2)
 
 # run the server. 
 if __name__ == '__main__':
