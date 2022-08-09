@@ -1,5 +1,5 @@
 body{
-    background-color: rgba(207, 206, 206, 0.644);
+    background-color: #75e9e5; 
 }
 .original-text-section{
     display: flex;
@@ -9,6 +9,11 @@ body{
 }
 .text_area_1{
     border-radius: 10px;
+    background-color: whitesmoke;
+    border-color: #00a6a7;
+}
+.text_area_1:{
+    background-color: black;
 }
 .buttons-section{
     display: flex;
@@ -18,6 +23,7 @@ body{
 }
 .text_area_2{
     border: none;
+    background-color: #75e9e5;
     font:13px Tahoma, cursive;
     width:80%;
     line-height:1.5;
@@ -35,7 +41,7 @@ input{
     justify-content: center;
 }
 .summarize-button{
-    background-color: #4CAF50;
+    background-color: #00a6a7;
     border: none;
     border-radius: 15px;
     color: white;
@@ -45,6 +51,11 @@ input{
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
+}
+.summarize-button:hover{
+    color: #00a6a7;
+    background-color: white;
+    border: 1.5px solid #00a6a7;
 }
 .summary-type-select{
     display: flex;
