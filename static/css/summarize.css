@@ -79,3 +79,6 @@ input{
 input{
     cursor: pointer;
 }
+marquee{
+    font-family: 'Times New Roman';
+}
