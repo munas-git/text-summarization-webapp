@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/summarize.css">
+    <link rel="stylesheet" href="../static/css/omega.css">
     <title>Summarize</title>
 </head>
 
@@ -39,25 +39,6 @@
     <div class="summary-intro">
         <textarea class = text_area_2 id="text_area_summary" readonly placeholder="Summary appears here...."  >{{final_summary}}</textarea>
     </div>
-
-
-    <script>
-        // This script section handles auto adjusting summary textarea height.
-        const textarea = document.getElementById("text_area_summary");
-        textarea.style.cssText = `height: ${textarea.scrollHeight}px; overflow-y:hidden`;
-
-        textarea.addEventListener("input", function(){
-            this.style.height = "auto";
-            this.style.height = `${this.scrollHeight}px`;
-        })
-        
-
-        // This script section handles returning of alert to user if summary is Undetermined.
-        // message = "Please Enter Text With Greater Length Or Make Sure Text Has Reasonable Content For Summarization."
-        // if (document.getElementById("text_area_summary").textContent == "Undetermined"){
-            // alert(message);}
-            // document.getElementsByClassName("summarize-button").onclick = alert();}
-    </script>
 
 </body>
 </html>

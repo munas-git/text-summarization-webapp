@@ -46,9 +46,9 @@ def summarize():
 
                 return render_template('post-summarize.html', final_summary = final_summary, topic = topic, original_text = original_text, summary_length = summary_length, original_text_length = original_text_length)
             except Exception:
-                message_1 = "Summary Undetermined"
+                # Returns 'Summary Undetermined' to the final-summary field and 'Undetermined' for other summary information.
                 message_2 = "Undetermined"
-                return render_template('post-summarize.html', final_summary = message_1, topic = message_2, original_text = original_text, summary_length = message_2, original_text_length = message_2)
+                return render_template('post-summarize.html', final_summary = "Summary Undetermined", topic = message_2, original_text = original_text, summary_length = message_2, original_text_length = message_2)
 
 
 # run the server. 

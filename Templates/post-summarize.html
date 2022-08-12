@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/summarize.css">
+    <link rel="stylesheet" href="../static/css/omega.css">
     <title>Summarize</title>
 </head>
 
@@ -37,8 +37,13 @@
     <br>
     <br>
     <div class="summary-intro">
-        <textarea class = text_area_2 id="text_area_summary" readonly placeholder="Summary appears here...."  >{{final_summary}}</textarea>
+        <textarea class = text_area_2 id="text_area_summary" readonly placeholder="Summary appears here...."  >{{final_summary}}</textarea><br>
     </div>
+
+    <p>The topic of the body of text is "{{topic}}"</p>
+    <p>The length of the original text is: {{original_text_length}}</p>
+    <p>The length of the summary text is: {{summary_length}}</p>
+
 
 
     <script>
@@ -52,7 +57,7 @@
         })
         
 
-        // This script section handles returning of alert to user if summary is Undetermined.
+        // This script section handles returning of alert to user if summary is empty.
         message = "Please Enter Text With Greater Length Or Make Sure Text Has Reasonable Content For Summarization."
         if (document.getElementById("text_area_summary").textContent == "Summary Undetermined"){
             alert(message);}
