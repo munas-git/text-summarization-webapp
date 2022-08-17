@@ -227,5 +227,6 @@ def extract_docx(word_document):
             continue
         else:
             full_text_string += sent_ence
-
+    # Removing white space at start of entire text.
+    full_text_string = full_text_string.strip()
     return(full_text_string)
