@@ -80,7 +80,7 @@ class Summarizer():
         return(final_sorted_summary_string)
 
 
-def word_count_vec(word_tokens):
+def word_count_vec(word_tokens:list) -> tuple:
         '''
          This function produces a dictionary containing the normalized scores of each word tokens in a list
          
@@ -116,7 +116,7 @@ def word_count_vec(word_tokens):
         return(word_frequency_scores, topic)        
 
 
-def sentence_scoring(sentence_tokens, word_frequency_scores):
+def sentence_scoring(sentence_tokens:list, word_frequency_scores:dict):
         '''
         This function calculates scores for each sentence and returns a dictionary containing sentence, score and order.
         
@@ -141,7 +141,7 @@ def sentence_scoring(sentence_tokens, word_frequency_scores):
         return(sentence_scores)
 
 
-def string_synonym_swap(text):
+def string_synonym_swap(text: str) -> str:
     """
     This function converts strings to their synonyms    
     It also returns text containing CAPITAL letters as they are.
@@ -177,11 +177,12 @@ def string_synonym_swap(text):
             if token not in punctuation:
                 string += ' '+token
             else:
-                string += token 
-    return(string.strip())
+                string += token
+    string = string.strip()
+    return(string)
 
 
-def extract_txt(text_document):
+def extract_txt(text_document) -> str:
     """
     Function to extract text from .txt file extension document
 
@@ -198,9 +199,9 @@ def extract_txt(text_document):
     return(full_text_string)
 
 
-def extract_docx(word_document):
+def extract_docx(word_document) -> str:
     """
-    Function to extract text from .docx file extension document
+    Function to extract text from .docx file extension document.
 
     Parameters:
     
@@ -208,7 +209,7 @@ def extract_docx(word_document):
     
     return:
     
-    full_text_string : String of text contained in the .docx document provided
+    full_text_string : String of text contained in the .docx document provided.
     """
     # Empty string variables to contain final cleaned document text.
     full_text_list = [] # sentences including empty space sentences
