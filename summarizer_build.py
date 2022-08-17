@@ -1,4 +1,5 @@
 # Importing important libraries.
+import docx
 from nltk.corpus import stopwords
 from nltk.tokenize import sent_tokenize
 from nltk.tokenize import word_tokenize
@@ -140,23 +141,6 @@ def sentence_scoring(sentence_tokens, word_frequency_scores):
         return(sentence_scores)
 
 
-def extract_txt(document):
-    """
-    Function to extract text from .txt file extension document
-
-    Parameters:
-    
-    > Document with file extension .txt
-    
-    return:
-    
-    full_text_string : String of text contained in the .txt document provided
-    """
-    with open(document) as text:
-        full_text_string = text.read().replace("\n", '')
-        return(full_text_string)
-    
-
 def string_synonym_swap(text):
     """
     This function converts strings to their synonyms    
@@ -195,3 +179,45 @@ def string_synonym_swap(text):
             else:
                 string += token 
     return(string.strip())
+
+
+def extract_txt(text_document):
+    """
+    Function to extract text from .txt file extension document
+
+    Parameters:
+    
+    > Document with file extension .txt
+    
+    return:
+    
+    full_text_string : String of text contained in the .txt document provided
+    """
+    # Decodes byte string and cleans decoded content.
+    full_text_string = text_document.read().decode("utf-8").replace("\n", '').replace('\r', '').replace('\t', '')
+    return(full_text_string)
+
+
+def extract_docx(word_document):
+    """
+    Function to extract text from .docx file extension document
+
+    Parameters:
+    
+    > Document with file extension .docx
+    
+    return:
+    
+    full_text_string : String of text contained in the .txt document provided
+    """
+    # Empty string variable to contain final cleaned document text.
+    full_text_string = ''
+    # Instantiation of word document reader object
+    document = docx.Document(word_document)
+    # breaking all word document objects into paragraphs
+    paragraphs = document.paragraphs
+    # Loop to extract text from paragraphs
+    for paragraph in paragraphs:
+        sentence = paragraph.text.strip().replace('\n', '').replace('\t', '').replace('\r', '')
+        full_text_string += ' '+ sentence
+        return(full_text_string)
