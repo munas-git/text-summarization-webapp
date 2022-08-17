@@ -194,7 +194,7 @@ def extract_txt(text_document):
     full_text_string : String of text contained in the .txt document provided
     """
     # Decodes byte string and cleans decoded content.
-    full_text_string = text_document.read().decode("utf-8").replace("\n", '').replace('\r', '').replace('\t', '')
+    full_text_string = text_document.read().decode("utf-8").strip()
     return(full_text_string)
 
 
@@ -208,16 +208,24 @@ def extract_docx(word_document):
     
     return:
     
-    full_text_string : String of text contained in the .txt document provided
+    full_text_string : String of text contained in the .docx document provided
     """
-    # Empty string variable to contain final cleaned document text.
-    full_text_string = ''
+    # Empty string variables to contain final cleaned document text.
+    full_text_list = [] # sentences including empty space sentences
+    full_text_string = '' # Final/clean sentences without unnecessary spaces.
     # Instantiation of word document reader object
     document = docx.Document(word_document)
     # breaking all word document objects into paragraphs
     paragraphs = document.paragraphs
-    # Loop to extract text from paragraphs
+    # Loop to extract text from paragraphs and append texts to list
     for paragraph in paragraphs:
-        sentence = paragraph.text.strip().replace('\n', '').replace('\t', '').replace('\r', '')
-        full_text_string += ' '+ sentence
-        return(full_text_string)
+        sentence = paragraph.text.strip()
+        full_text_list.append(sentence)
+    # Loop to append sentences to sentences string. It ignors empty sentences in the list.
+    for sent_ence in full_text_list:
+        if sent_ence == '':
+            continue
+        else:
+            full_text_string += sent_ence
+
+    return(full_text_string)
