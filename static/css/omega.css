@@ -12,9 +12,7 @@ body{
     background-color: whitesmoke;
     border-color: #00a6a7;
 }
-.text_area_1:{
-    background-color: black;
-}
+
 .buttons-section{
     display: flex;
     align-items: center;
@@ -25,8 +23,8 @@ body{
     border: none;
     background-color: #75e9e5;
     font:13px Tahoma, cursive;
-    width:80%;
-    line-height:1.5;
+    width: 80%;
+    line-height: 1.5;
     font-size: medium;
 }
 input{
@@ -35,7 +33,7 @@ input{
     font-size: 1.3em;
 }
 .submit-button-div{
-    display: flex;
+    display: flex; 
     align-items: center;
     align-content: center;
     justify-content: center;
@@ -81,4 +79,10 @@ input{
 }
 marquee{
     font-family: 'Times New Roman';
+}
+
+.file_upload{
+    /* opacity: 0; */
+    position: relative;
+    overflow: hidden;
 }

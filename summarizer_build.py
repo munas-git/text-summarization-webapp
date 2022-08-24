@@ -19,7 +19,7 @@ class Summarizer():
     '''
 
 
-    def __init__ (self, text, churn_level):
+    def __init__ (self, text:str, churn_level:float):
         self.text = text
         self.churn_level = float(churn_level)
 
