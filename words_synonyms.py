@@ -693,6 +693,8 @@ words_synonyms = {
 'rural': 'rustic',
 'rustic': 'rural',
 'ruthless': 'remorseless',
+'saddle' : 'charge',
+'saddled' : 'charged',
 'sacred': 'cherish',
 'sarcastic': 'derogatory',
 'saucy': 'impudent',

@@ -29,4 +29,4 @@
 #### Links to resources used. ####
 
 #### Features to add. ####
-- Summary download
+- Summary download (write text-document to downloads)
