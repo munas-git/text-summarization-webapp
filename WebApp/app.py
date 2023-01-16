@@ -60,10 +60,10 @@ def text_summary():
 
 
 
-# @app.route("/doc-summary/", methods= ['GET', 'POST'])
-# def doc_summary():
-#     if request.method == "GET":
-#         return render_template()
+@app.route("/doc-summary/", methods= ['GET', 'POST'])
+def doc_summary():
+    if request.method == "GET":
+        return render_template("docSummary.html")
 #     else:
 #         return render_template()
 
