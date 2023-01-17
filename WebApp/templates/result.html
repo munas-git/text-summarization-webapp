@@ -95,14 +95,14 @@
                <div class="col-md-6 offset-md-3">
                   <form id="request" class="main_form">
                      <div class="row">
-                        <div class="col-md-12 ">
-                           <input class="contactus" placeholder="Predicted Topic: {{topic}}" readonly> 
-                        </div>
                         <div class="col-md-12">
                            <input class="contactus" placeholder="Original Text Length: {{original_text_length}}" readonly> 
                         </div>
                         <div class="col-md-12">
                            <input class="contactus" placeholder="Summary Text Length: {{summary_length}}" readonly>                          
+                        </div>
+                        <div class="col-md-12 ">
+                           <input class="result-topics" placeholder="Predicted Topics: {{topic_1}}, {{topic_2}}." readonly> 
                         </div>
                         <div class="col-md-12">
                            <textarea class="result-textarea" id= text_area_summary readonly>{{final_summary}}</textarea>

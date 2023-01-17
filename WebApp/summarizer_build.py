@@ -1,5 +1,6 @@
 # Importing important libraries.
 import docx
+import pandas as pd
 from nltk.corpus import stopwords
 from nltk.tokenize import sent_tokenize
 from nltk.tokenize import word_tokenize
@@ -8,7 +9,9 @@ stop_words = stopwords.words('english')
 from string import punctuation
 punctuation = punctuation + '’'
 from words_synonyms import words_synonyms
+from sklearn.feature_extraction.text import CountVectorizer
 text_topic = '' # List that will contain string topics.
+
 
 class Summarizer():
     '''
@@ -17,9 +20,8 @@ class Summarizer():
     > self : text, type - string
     > self : churn_level float specifying percentage of original content to capture
     '''
-############################# CHECK HERE IS ANY ISSUES WITH SUMMARY LENGTH #############################
 
-    def __init__ (self, text:str, churn_level:float= 0.5):
+    def __init__ (self, text:str, churn_level:float):
         self.text = text
         self.churn_level = float(churn_level)
 
@@ -112,8 +114,13 @@ def word_count_vec(word_tokens:list) -> tuple:
         for word in word_frequency_scores.keys():
             word_frequency_scores[word] = (word_frequency_scores[word] - min_frequency) / (max_frequency - min_frequency)
 
-        topic = max(word_frequency_scores, key=word_frequency_scores.get)
-        return(word_frequency_scores, topic)        
+        # Calculating top Bi-gram for topic 2
+        clean_words_string = ' '.join(clean_words)
+        transformer = CountVectorizer(ngram_range=(2,2))
+        transformer.fit_transform([clean_words_string]) 
+        topic_2 = pd.DataFrame(transformer.transform([clean_words_string]).toarray(), columns = transformer.get_feature_names()).T.sort_values(0, ascending=False).T.columns[0]
+        topic_1 = max(word_frequency_scores, key=word_frequency_scores.get)
+        return(word_frequency_scores, topic_1, topic_2)        
 
 
 def sentence_scoring(sentence_tokens:list, word_frequency_scores:dict):

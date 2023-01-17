@@ -37,7 +37,8 @@ def text_summary():
                 # Calculating word scores, returning word scores and most occuring word.
                 word_frequency_scores_topic = word_count_vec(word_tokens_list)
                 word_frequency_scores = word_frequency_scores_topic[0]
-                topic = word_frequency_scores_topic[1].capitalize()
+                topic_1 = word_frequency_scores_topic[1].capitalize()
+                topic_2 = word_frequency_scores_topic[2].capitalize()
 
                 # Scoring sentences based on word_frequency_scores.
                 sentence_scores = sentence_scoring(sentence_tokens_list, word_frequency_scores)
@@ -51,8 +52,9 @@ def text_summary():
                 # Getting final details
                 summary_length = len(final_summary)
                 original_text_length = len(original_text)
+                # topic_2 = topic_2,
 
-                return render_template('result.html', final_summary = final_summary, topic = topic, original_text = original_text, summary_length = summary_length, original_text_length = original_text_length)
+                return render_template('result.html', final_summary = final_summary, topic_1 = topic_1, topic_2 = topic_2, original_text = original_text, summary_length = summary_length, original_text_length = original_text_length)
             except Exception:
                 # Returns 'Summary Undetermined' to the final-summary field and 'Undetermined' for other summary information.
                 message_2 = "Undetermined"
@@ -88,7 +90,8 @@ def doc_summary():
             # Calculating word scores, returning word scores and most occuring word.
             word_frequency_scores_topic = word_count_vec(word_tokens_list)
             word_frequency_scores = word_frequency_scores_topic[0]
-            topic = word_frequency_scores_topic[1].capitalize()
+            topic_1 = word_frequency_scores_topic[1].capitalize()
+            topic_2 = word_frequency_scores_topic[2].capitalize()
 
             # Scoring sentences based on word_frequency_scores.
             sentence_scores = sentence_scoring(sentence_tokens_list, word_frequency_scores)
@@ -103,7 +106,7 @@ def doc_summary():
             summary_length = len(final_summary)
             original_text_length = len(original_text)
 
-            return render_template('result.html', final_summary = final_summary, topic = topic, original_text = original_text, summary_length = summary_length, original_text_length = original_text_length)
+            return render_template('result.html', final_summary = final_summary, topic_1 = topic_1, topic_2 = topic_2, original_text = original_text, summary_length = summary_length, original_text_length = original_text_length)
         except Exception:
             # Returns 'Summary Undetermined' to the final-summary field and 'Undetermined' for other summary information.
             message_2 = "Undetermined"
