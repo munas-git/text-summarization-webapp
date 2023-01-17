@@ -23,7 +23,7 @@ def text_summary():
             original_text = request.form.get('original_text')
             churn_level = float(request.form.get('churn_level'))
 
-            # Initializing summerizer.
+            # Initializing summarizer.
             summarize = Summarizer(original_text, churn_level)
 
             # Converting original text to word and sentence tokens.
@@ -52,7 +52,7 @@ def text_summary():
                 summary_length = len(final_summary)
                 original_text_length = len(original_text)
 
-                return render_template('textSummary.html', final_summary = final_summary, topic = topic, original_text = original_text, summary_length = summary_length, original_text_length = original_text_length)
+                return render_template('result.html', final_summary = final_summary, topic = topic, original_text = original_text, summary_length = summary_length, original_text_length = original_text_length)
             except Exception:
                 # Returns 'Summary Undetermined' to the final-summary field and 'Undetermined' for other summary information.
                 message_2 = "Undetermined"
@@ -67,6 +67,7 @@ def doc_summary():
         doc = request.files['uploadFile']
         text = extract_txt(doc)
         print(text)
+        print(doc.filename)
         
         return render_template("docSummary.html")
 
@@ -78,4 +79,4 @@ def about():
 
 # run the server. 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()

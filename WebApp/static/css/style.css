@@ -642,9 +642,21 @@ button {
 
 .main_form .contactus {
      border: inherit;
-     margin-bottom: 20px;
-     width: 100%;
+     margin-bottom: 10px;
+     width: 50%;
      height: 60px;
+     background: transparent;
+     color: #f9fcfd;
+     font-size: 18px;
+     font-weight: normal;
+     border-bottom: #fff solid 1px;
+}
+
+.result-textarea{
+     border: inherit;
+     margin-bottom: 20px;
+     width: 120%;
+     /* height: 350px; */
      background: transparent;
      color: #f9fcfd;
      font-size: 18px;

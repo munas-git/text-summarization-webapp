@@ -46,7 +46,7 @@
                      <div class="full">
                         <div class="center-desk">
                            <div class="logo">
-                              <a href="index.html"><img src="images/logo.png" alt="#" /></a>
+                              <!-- <a href="index.html"><img src="../static/images/logo.png" alt="#" /></a> -->
                            </div>
                         </div>
                      </div>
@@ -59,20 +59,19 @@
                            </button>
                            <div class="collapse navbar-collapse" id="navbarsExample04">
                               <ul class="navbar-nav mr-auto">
-                                 <li class="nav-item ">
-                                    <a class="nav-link" href="about.html"> About Us  </a>
+                                 <li class="nav-item active">
+                                    <a class="nav-link" href="{{url_for('index')}}">Home</a>
                                  </li> 
                                  <li class="nav-item">
-                                    <a class="nav-link" href="clients.html">Our Clients</a>
-                                 </li>
-                                 <li class="nav-item active">
-                                    <a class="nav-link" href="ourwork.html">Our Work</a>
+                                    <a class="nav-link" href="{{url_for('text_summary')}}">Text Summarize</a>
                                  </li>
                                  <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Contact Us</a>
+                                    <a class="nav-link" href="{{url_for('doc_summary')}}">Doc. Summarize</a>
+                                 </li>
+                                 <li class="nav-item">
+                                    <a class="nav-link" href="{{url_for('about')}}">About Us</a>
                                  </li>
                               </ul>
-                              <div class="sign_btn"><a href="#">Get A Quote</a></div>
                            </div>
                         </nav>
                      </div>
@@ -83,75 +82,57 @@
       </header>
       <!-- end header inner -->
       <!-- end header -->
-       <div class="ourwork">
-          <div class="container">
-             <div class="row">
-                <div class="col-md-12">
-                   <div class="titlepage">
-                      <h2>Our Work</h2>
-                   </div>
-                </div>
-             </div>
-             <div class="row">
-                <div class="col-md-4">
-                   <div class="our_box">
-                      <figure><img src="images/our.jpg" alt="#"/></figure>
-                   </div>
-                </div>
-                <div class="col-md-4">
-                   <div class="our_box">
-                      <figure><img src="images/our1.jpg" alt="#"/></figure>
-                   </div>
-                </div>
-                <div class="col-md-4">
-                   <div class="our_box">
-                      <figure><img src="images/our.jpg" alt="#"/></figure>
-                   </div>
-                </div>
-                <div class="col-md-4">
-                   <div class="our_box">
-                      <figure><img src="images/our1.jpg" alt="#"/></figure>
-                   </div>
-                </div>
-                <div class="col-md-4">
-                   <div class="our_box">
-                      <figure><img src="images/our.jpg" alt="#"/></figure>
-                   </div>
-                </div>
-                <div class="col-md-4">
-                   <div class="our_box">
-                      <figure><img src="images/our1.jpg" alt="#"/></figure>
-                   </div>
-                </div>
-             </div>
-          </div>
-       </div>
       
-      
+      <!--  contact -->
+      <div id="contact" class="contact">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>Your Summary</h2>
+                  </div>
+               </div>
+               <div class="col-md-6 offset-md-3">
+                  <form id="request" class="main_form">
+                     <div class="row">
+                        <div class="col-md-12 ">
+                           <input class="contactus" placeholder="Predicted Topic: {{topic}}" readonly> 
+                        </div>
+                        <div class="col-md-12">
+                           <input class="contactus" placeholder="Original Text Length: {{original_text_length}}" readonly> 
+                        </div>
+                        <div class="col-md-12">
+                           <input class="contactus" placeholder="Summary Text Length: {{summary_length}}" readonly>                          
+                        </div>
+                        <div class="col-md-12">
+                           <textarea class="result-textarea" id= text_area_summary readonly>{{final_summary}}</textarea>
+                        </div>
+                        <!-- <div class="col-sm-12">
+                           <button class="send_btn">Send</button>
+                        </div> -->
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end contact -->
       <!--  footer -->
       <footer>
          <div class="footer">
             <div class="container">
                <div class="row border-top">
                   <div class="col-md-6 padding_bottom1   ">
-                     <h3>Subscribe Now</h3>
-                     <form class="footer_form">
-                        <input class="enter" placeholder="Enter your email" type="type" name="Enter your email">
-                        <button class="submit">submit</button>
-                     </form>
+                     <h3>Quick Info</h3>
+                     <p>This project is the first version of itself.</p>
                   </div>
                   <div class="col-md-6">
                      <div class="row">
-                        <div class="col-md-5 offset-md-1 padding_bottom1">
-                           <h3>Links</h3>
-                           <ul class="cont">
-                              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do </li>
-                           </ul>
-                        </div>
                         <div class="col-md-5 offset-md-1">
-                           <h3>Contact us</h3>
+                           <h3>Contact Me.</h3>
                            <ul class="cont">
-                              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do </li>
+                              <li>Twitter: <a target=”_blank” href="https://twitter.com/einsteinmuna">@einsteinmuna</a> </li>
+                              <li>GitHub: <a target=”_blank” href="https://github.com/munas-git">munas-git</a> </li>
                            </ul>
                         </div>
                      </div>
@@ -171,15 +152,27 @@
       </footer>
       <!-- end footer -->
       <!-- Javascript files-->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/popper.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="../static/js/jquery.min.js"></script>
+      <script src="../static/js/popper.min.js"></script>
+      <script src="../static/js/bootstrap.bundle.min.js"></script>
+      <script src="../static/js/jquery-3.0.0.min.js"></script>
     
       <!-- sidebar -->
-      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-      <script src="js/custom.js"></script>
+      <script src="../static/js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="../static/js/custom.js"></script>
       <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+      <script>
+         // This script section handles auto adjusting summary textarea height.
+         const textarea = document.getElementById("text_area_summary");
+         textarea.style.cssText = `height: ${textarea.scrollHeight}px; overflow-y:hidden`;
+ 
+         textarea.addEventListener("input", function(){
+             this.style.height = "auto";
+             this.style.height = `${this.scrollHeight}px`;
+         })
+     </script>
+
    </body>
 </html>
 
