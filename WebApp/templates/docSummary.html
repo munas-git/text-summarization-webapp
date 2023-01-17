@@ -92,19 +92,19 @@
                   </div>
                </div>
                <div class="col-md-6 offset-md-3">
-                  <form id="request" class="main_form">
+                  <form id="request" class="main_form" method="POST" action="/doc-summary/" enctype= multipart/form-data>
                      <div class="drop-zone">
                            <span class="drop-zone__prompt">Drop file here or click to upload</span>
-                           <input accept=".doc,.docx,.txt" type="file" name="myFile" class="drop-zone__input" required>
+                           <input accept=.doc,.docx,.txt type=file name="uploadFile" class="drop-zone__input" required>
                      </div>
-                        <div class="doc-radio-div">
+                     <div class="doc-radio-div">
                            <input type="radio" name="churn_level" id="short" value="0.3">
-                           <label for="short">Short  </label>
+                           <label for="short">Short</label>
                            <input type="radio" name="churn_level" id="medium" value="0.5">
                            <label for="medium">Medium  </label>
                            <input type="radio" name="churn_level" id="long" value="0.7">
                            <label for="long">Long</label>
-                           <button class="send_btn">Summarize</button>
+                           <button class="send_btn" type="submit">Summarize</button>
                      </div>
                   </form>
                </div>

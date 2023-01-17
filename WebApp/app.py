@@ -1,9 +1,12 @@
 from summarizer_build import *
+from werkzeug.utils import secure_filename
 from flask import Flask, render_template, request
 
 
 app = Flask(__name__)
 app.secret_key = 'forsummary'
+UPLOAD_FOLDER = '../docUpload'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
 @app.route('/', methods= ['GET'])
@@ -56,13 +59,16 @@ def text_summary():
                 return render_template('textSummary.html', final_summary = "Summary Undetermined", topic = message_2, original_text = original_text, summary_length = message_2, original_text_length = message_2)
 
 
-
 @app.route("/doc-summary/", methods= ['GET', 'POST'])
 def doc_summary():
     if request.method == "GET":
         return render_template("docSummary.html")
-#     else:
-#         return render_template()
+    elif request.method == "POST":
+        doc = request.files['uploadFile']
+        text = extract_txt(doc)
+        print(text)
+        
+        return render_template("docSummary.html")
 
 
 @app.route("/about/", methods= ["GET"])
