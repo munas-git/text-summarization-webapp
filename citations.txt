@@ -18,3 +18,8 @@
 	A., J. (2021, August 3). What Is JavaScript? A Basic Introduction to JS for Beginners. Hostinger Tutorials. Retrieved October 2, 2022, from https://www.hostinger.com/tutorials/what-is-javascript
 - Flask Definition
 	DEERY. (2022, August 1). The Flask Web Framework: A Beginner’s Guide. CareerFoundry. Retrieved October 2, 2022, from https://careerfoundry.com/en/blog/web-development/what-is-flask/
+
+Tarau
+
+Orasan, C. (2022, January 1). [PDF] Automatic summarisation: 25 years On | Semantic Scholar. [PDF] Automatic Summarisation: 25 Years on | Semantic Scholar. Retrieved November 20, 2022, from 
+	https://www.semanticscholar.org/paper/Automatic-summarisation%3A-25-years-On-Orasan/1cbf3cfab1032287ddf164a3d8d472c7ff96b36a#citing-papers
