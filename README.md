@@ -21,5 +21,6 @@ The system is also capable of detecting the language of the body of text entered
 ** VIDEO GOES HERE **
 
 
-> Extra Notes
-The system UI was a template gotten from <a href="https://www.free-css.com/free-css-templates/page277/blueneek">free-css</a> however, I made several adjustments in order to suite my taste and my project requirement. I'm currently not very good with HTML and CSS 😅.
+> Extra Notes   
+##### The system UI was a template gotten from <a href="https://www.free-css.com/free-css-templates/page277/blueneek">free-css</a> however, I made several adjustments in order to suite my taste and my project requirement. I'm currently not very good with HTML and CSS 😅.   
+##### There is still room for code refactor and system improvements. New features such as converting summary from one language to another, a broader vocabulary for word synonyms (one word having a list of signle word or phrase synonyms instead of single synonym), improved UI and more are updates in view however, you are more than welcome to fork this repo and make those changes and more by yourself 😉.
