@@ -9,9 +9,9 @@
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
       <title>Document Summarizer</title>
-      <meta name="keywords" content="">
+      <!-- <meta name="keywords" content="">
       <meta name="description" content="">
-      <meta name="author" content="">
+      <meta name="author" content=""> -->
       <!-- bootstrap css -->
       <link rel="stylesheet" href="../static/css/bootstrap.min.css">
       <!-- style css -->
@@ -19,9 +19,9 @@
       <!-- Responsive-->
       <link rel="stylesheet" href="../static/css/responsive.css">
       <!-- fevicon -->
-      <link rel="icon" href="../static/images/fevicon.png" type="image/gif" />
+      <!-- <link rel="icon" href="../static/images/fevicon.png" type="image/gif" /> -->
       <!-- Scrollbar Custom CSS -->
-      <link rel="stylesheet" href="../static/css/jquery.mCustomScrollbar.min.css">
+      <!-- <link rel="stylesheet" href="../static/css/jquery.mCustomScrollbar.min.css"> -->
       <!-- Tweaks for older IEs-->
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
@@ -91,33 +91,19 @@
                   <div class="titlepage">
                      <h2>Your Summary</h2>
                   </div>
-               </div>
-               <div class="col-md-6 offset-md-3">
-                  <form id="request" class="main_form">
-                     <div class="row">
-                        <div class="col-md-12">
-                           <input class="contactus" placeholder="Original Text Length: {{original_text_length}}" readonly> 
-                        </div>
-                        <div class="col-md-12">
-                           <input class="contactus" placeholder="Summary Text Length: {{summary_length}}" readonly>                          
-                        </div>
-                        <div class="col-md-12 ">
-                           <input class="result-topics" placeholder="Predicted Topics: {{topic_1}}, {{topic_2}}." readonly> 
-                        </div>
-                        <div class="col-md-12">
-                           <textarea class="result-textarea" id= text_area_summary readonly>{{final_summary}}</textarea>
-                        </div>
-                        <!-- <div class="col-sm-12">
-                           <button class="send_btn">Send</button>
-                        </div> -->
-                     </div>
-                  </form>
-               </div>
+                  <p>Original Text Length: {{original_text_length}}.</p>
+                  <p>Summary Text Length: {{summary_length}}.</p>
+                  <p>Suggested Topics: {{topic_1}}, {{topic_2}}.</p>
+                  <br>
+                  <p>{{final_summary}}</p>
+                     <!-- <button id="request" class="but" type="submit">Download</button> -->
+                     <!-- <button id="request" class="but" type="submit">Download</button> -->
             </div>
          </div>
       </div>
       <!-- end contact -->
       <!--  footer -->
+      <br>
       <footer>
          <div class="footer">
             <div class="container">
@@ -139,15 +125,6 @@
                   </div>
                </div>
             </div>
-            <div class="copyright">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-md-12">
-                        <p>© 2019 All Rights Reserved. <a href="https://html.design/"> Free Html Templates</a></p>
-                     </div>
-                  </div>
-               </div>
-            </div>
          </div>
       </footer>
       <!-- end footer -->
@@ -162,7 +139,7 @@
       <script src="../static/js/custom.js"></script>
       <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 
-      <script>
+      <!-- <script>
          // This script section handles auto adjusting summary textarea height.
          const textarea = document.getElementById("text_area_summary");
          textarea.style.cssText = `height: ${textarea.scrollHeight}px; overflow-y:hidden`;
@@ -171,7 +148,7 @@
              this.style.height = "auto";
              this.style.height = `${this.scrollHeight}px`;
          })
-     </script>
+     </script> -->
 
    </body>
 </html>

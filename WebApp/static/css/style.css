@@ -128,12 +128,14 @@ ol {
      padding: 0px;
      list-style: none;
 }
-
+/* CHECK HERE INCASE OF ANY ISSUES WITH SUMMARY RESULT STYLING */
 p {
      margin: 0px;
-     font-weight: 500;
-     font-size: 15px;
+     font-weight: 400;
+     font-size: 22px;
      line-height: 24px;
+     color: white;
+     margin: 12px;
 }
 
 a {
@@ -655,7 +657,7 @@ button {
 .result-textarea{
      border: inherit;
      margin-bottom: 20px;
-     width: 120%;
+     width: 150%;
      background: transparent;
      color: #f9fcfd;
      font-size: 18px;
@@ -666,7 +668,7 @@ button {
 .result-topics{
      border: inherit;
      margin-bottom: 20px;
-     width: 120%;
+     width: 150%;
      background: transparent;
      color: #f9fcfd;
      font-size: 18px;
@@ -674,7 +676,7 @@ button {
      border-bottom: #fff solid 1px;
 }
 
-.main_form .send_btn {
+.main_form .send_btn, .but {
      font-size: 17px;
      transition: ease-in all 0.5s;
      background-color: transparent;
@@ -691,7 +693,8 @@ button {
      margin-top: 30px;
 }
 
-.main_form .send_btn:hover {
+
+.main_form .send_btn:hover, .but:hover {
      background-color: #00aeef;
      transition: ease-in all 0.5s;
      color: #fff;
