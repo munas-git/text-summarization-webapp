@@ -95,8 +95,8 @@
                   <p>Summary Text Length: {{summary_length}}.</p>
                   <p>Suggested Topics: {{topic_1}}, {{topic_2}}.</p>
                   <br>
-                  <p>{{final_summary}}</p>
-                     <!-- <button id="request" class="but" type="submit">Download</button> -->
+                  <p id="summaryContent">{{final_summary}}</p>
+                  <button onclick="Export2Word('summaryContent');" class="but" >Download</button>
                      <!-- <button id="request" class="but" type="submit">Download</button> -->
             </div>
          </div>
@@ -129,6 +129,7 @@
       </footer>
       <!-- end footer -->
       <!-- Javascript files-->
+      <script src="../static/js/download.js"></script>
       <script src="../static/js/jquery.min.js"></script>
       <script src="../static/js/popper.min.js"></script>
       <script src="../static/js/bootstrap.bundle.min.js"></script>
