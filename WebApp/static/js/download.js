@@ -11,7 +11,7 @@ function Export2Word(element, filename = ''){
     var url = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(html);
     
     // Specify file name
-    filename = filename?filename+'.doc':'document.doc';
+    filename = filename?filename+'.doc':'Summary.doc';
     
     // Create download link element
     var downloadLink = document.createElement("a");

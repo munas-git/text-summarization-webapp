@@ -133,7 +133,7 @@ p {
      margin: 0px;
      font-weight: 400;
      font-size: 22px;
-     line-height: 24px;
+     line-height: 28px;
      color: white;
      margin: 12px;
 }
@@ -931,4 +931,10 @@ ul.cont li {
      margin: auto;
      width: 50%;
      padding: 40px;
+}
+
+/* PLAY BUTTON FOR RESULT PAGE. */
+.fa-play-circle{
+     background-color: #042431;
+     color: white;
 }

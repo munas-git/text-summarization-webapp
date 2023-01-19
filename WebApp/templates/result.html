@@ -28,6 +28,8 @@
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+      <!-- TEXT TO SPEECH -->
+      <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
    </head>
    <!-- body -->
    <body class="main-layout">
@@ -89,7 +91,7 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="titlepage">
-                     <h2>Your Summary</h2>
+                     <h2>Your Summary: Play  <button onclick="speakText()" class="fa fa-play-circle"></button></h2>
                   </div>
                   <p>Original Text Length: {{original_text_length}}.</p>
                   <p>Summary Text Length: {{summary_length}}.</p>
@@ -97,7 +99,6 @@
                   <br>
                   <p id="summaryContent">{{final_summary}}</p>
                   <button onclick="Export2Word('summaryContent');" class="but" >Download</button>
-                     <!-- <button id="request" class="but" type="submit">Download</button> -->
             </div>
          </div>
       </div>
@@ -130,6 +131,7 @@
       <!-- end footer -->
       <!-- Javascript files-->
       <script src="../static/js/download.js"></script>
+      <script src="../static/js/speakText.js"></script>
       <script src="../static/js/jquery.min.js"></script>
       <script src="../static/js/popper.min.js"></script>
       <script src="../static/js/bootstrap.bundle.min.js"></script>
@@ -139,18 +141,6 @@
       <script src="../static/js/jquery.mCustomScrollbar.concat.min.js"></script>
       <script src="../static/js/custom.js"></script>
       <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-
-      <!-- <script>
-         // This script section handles auto adjusting summary textarea height.
-         const textarea = document.getElementById("text_area_summary");
-         textarea.style.cssText = `height: ${textarea.scrollHeight}px; overflow-y:hidden`;
- 
-         textarea.addEventListener("input", function(){
-             this.style.height = "auto";
-             this.style.height = `${this.scrollHeight}px`;
-         })
-     </script> -->
-
    </body>
 </html>
 
