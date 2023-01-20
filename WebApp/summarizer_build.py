@@ -10,7 +10,6 @@ punctuation = punctuation + '’'
 from words_synonyms import words_synonyms
 stop_words = stopwords.words(stopwords.fileids())
 from sklearn.feature_extraction.text import CountVectorizer
-# text_topic = '' # List that will contain string topics.
 
 
 class Summarizer():
