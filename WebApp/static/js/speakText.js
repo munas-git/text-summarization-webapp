@@ -6,7 +6,8 @@ function speakText(){
 
 
 function stopSpeech(){
-    responsiveVoice.pause();    
+    const test = responsiveVoice.pause();  
+    console.log(test)  
 }
 
 

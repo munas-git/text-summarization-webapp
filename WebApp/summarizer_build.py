@@ -117,7 +117,7 @@ def word_count_vec(word_tokens:list) -> tuple:
         clean_words_string = ' '.join(clean_words)
         transformer = CountVectorizer(ngram_range=(2,2))
         transformer.fit_transform([clean_words_string]) 
-        topic_2 = pd.DataFrame(transformer.transform([clean_words_string]).toarray(), columns = transformer.get_feature_names()).T.sort_values(0, ascending=False).T.columns[0].title()
+        topic_2 = pd.DataFrame(transformer.transform([clean_words_string]).toarray(), columns = transformer.get_feature_names_out()).T.sort_values(0, ascending=False).T.columns[0].title()
         topic_1 = max(word_frequency_scores, key=word_frequency_scores.get)
         return(word_frequency_scores, topic_1, topic_2)        
 
