@@ -5,12 +5,12 @@ from nltk.corpus import stopwords
 from nltk.tokenize import sent_tokenize
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
-stop_words = stopwords.words('english')
 from string import punctuation
 punctuation = punctuation + '’'
 from words_synonyms import words_synonyms
+stop_words = stopwords.words(stopwords.fileids())
 from sklearn.feature_extraction.text import CountVectorizer
-text_topic = '' # List that will contain string topics.
+# text_topic = '' # List that will contain string topics.
 
 
 class Summarizer():
