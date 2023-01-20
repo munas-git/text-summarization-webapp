@@ -934,7 +934,7 @@ ul.cont li {
 }
 
 /* PLAY BUTTON FOR RESULT PAGE. */
-.fa-play-circle{
+.fa-play-circle, .fa-pause{
      background-color: #042431;
      color: white;
 }
