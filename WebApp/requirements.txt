@@ -7,5 +7,5 @@ pandas==1.3.5
 python-docx==0.8.11
 regex==2022.3.15
 requests==2.27.1
-scikit-learn==1.1.3
+scikit-learn==1.0.2
 sklearn==0.0
