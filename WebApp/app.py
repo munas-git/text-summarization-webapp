@@ -55,8 +55,8 @@ def text_summary():
                 return render_template('result.html', final_summary = final_summary, topic_1 = topic_1, topic_2 = topic_2, original_text = original_text, summary_length = summary_length, original_text_length = original_text_length)
             except Exception:
                 # Returns 'Summary Undetermined' to the final-summary field and 'Undetermined' for other summary information.
-                flash('You were successfully logged in')
-                return render_template('textSummary.html')
+                message = "invalid"
+                return render_template('textSummary.html', message_= message)
 
 
 @app.route("/doc-summary/", methods= ['GET', 'POST'])
@@ -106,9 +106,8 @@ def doc_summary():
 
             return render_template('result.html', final_summary = final_summary, topic_1 = topic_1, topic_2 = topic_2, original_text = original_text, summary_length = summary_length, original_text_length = original_text_length)
         except Exception:
-            # Returns 'Summary Undetermined' to the final-summary field and 'Undetermined' for other summary information.
-            flash('You were successfully logged in')
-            return render_template('docSummary.html')
+            message = "invalid"
+            return render_template('docSummary.html', message_= message)
 
 
 @app.route("/about/", methods= ["GET"])

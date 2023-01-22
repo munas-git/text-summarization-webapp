@@ -940,3 +940,8 @@ ul.cont li {
      background-color: #042431;
      color: white;
 }
+
+/* HIDING ALERT TEXT */
+#alert{
+     color: #042431;
+}
