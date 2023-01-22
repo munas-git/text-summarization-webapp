@@ -3,7 +3,7 @@ import nltk
 import docx
 import pandas as pd
 nltk.download('stopwords')
-# nltk.download('')
+nltk.download('punkt')
 from nltk.corpus import stopwords
 from nltk.tokenize import sent_tokenize
 from nltk.tokenize import word_tokenize
