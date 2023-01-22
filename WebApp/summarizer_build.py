@@ -1,10 +1,12 @@
 # Importing important libraries.
+import nltk
 import docx
 import pandas as pd
+nltk.download('stopwords')
+# nltk.download('')
 from nltk.corpus import stopwords
 from nltk.tokenize import sent_tokenize
 from nltk.tokenize import word_tokenize
-from nltk.corpus import stopwords
 from string import punctuation
 punctuation = punctuation + '’'
 from words_synonyms import words_synonyms
