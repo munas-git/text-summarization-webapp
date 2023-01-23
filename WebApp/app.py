@@ -53,9 +53,9 @@ def text_summary():
                 original_text_length = len(original_text)
 
                 # Language detection
-                # lang = lang_detect([original_text])
+                lang = lang_detect([original_text])
 
-                return render_template('result.html', final_summary = final_summary, topic_1 = topic_1, topic_2 = topic_2, original_text = original_text, summary_length = summary_length, original_text_length = original_text_length, lang_ = "lang")
+                return render_template('result.html', final_summary = final_summary, topic_1 = topic_1, topic_2 = topic_2, original_text = original_text, summary_length = summary_length, original_text_length = original_text_length, lang_ = lang)
             except Exception:
                 # Returns 'Summary Undetermined' to the final-summary field and 'Undetermined' for other summary information.
                 message = "invalid"
@@ -108,9 +108,9 @@ def doc_summary():
             original_text_length = len(original_text)
 
             # Language detection
-            # lang = lang_detect([original_text])
+            lang = lang_detect([original_text])
 
-            return render_template('result.html', final_summary = final_summary, topic_1 = topic_1, topic_2 = topic_2, original_text = original_text, summary_length = summary_length, original_text_length = original_text_length, lang_ = "lang")
+            return render_template('result.html', final_summary = final_summary, topic_1 = topic_1, topic_2 = topic_2, original_text = original_text, summary_length = summary_length, original_text_length = original_text_length, lang_ = lang)
         except Exception:
             message = "invalid"
             return render_template('docSummary.html', message_= message)
