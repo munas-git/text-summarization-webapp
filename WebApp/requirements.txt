@@ -8,7 +8,7 @@ Flask-Bootstrap==3.3.7.1
 fonttools==4.38.0
 itsdangerous==2.1.2
 Jinja2==3.1.2
-joblib==1.2.0
+joblib==1.1.0
 kiwisolver==1.4.4
 lxml==4.9.2
 MarkupSafe==2.1.2
