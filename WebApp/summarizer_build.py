@@ -3,8 +3,8 @@ import nltk
 import docx
 import pickle
 import pandas as pd
-nltk.download('stopwords')
-nltk.download('punkt')
+# nltk.download('stopwords')
+# nltk.download('punkt')
 from nltk.corpus import stopwords
 from nltk.tokenize import sent_tokenize
 from nltk.tokenize import word_tokenize
@@ -13,6 +13,8 @@ punctuation = punctuation + "’``''"
 from words_synonyms import words_synonyms
 stop_words = stopwords.words(stopwords.fileids())
 from sklearn.feature_extraction.text import CountVectorizer
+transformer = pickle.load(open("./lang-transformer.pkl", "rb"))
+model = pickle.load(open("./lang-model.pkl", "rb"))
 
 
 class Summarizer():
@@ -243,8 +245,6 @@ def extract_docx(word_document) -> str:
 
 
 def lang_detect(text:list) -> str:
-    transformer = pickle.load(open("./lang-transformer.pkl", "rb"))
-    model = pickle.load(open("./lang-model.pkl", "rb"))
 
     language = model.predict(transformer.transform(text))[0]
     return(language)

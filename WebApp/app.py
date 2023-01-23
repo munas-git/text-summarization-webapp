@@ -4,8 +4,6 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 app.secret_key = 'forsummary'
-UPLOAD_FOLDER = '../docUpload'
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
 @app.route('/', methods= ['GET'])
