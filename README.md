@@ -1,4 +1,4 @@
-#### Project Status: Incomplete.
+#### Project Status: Complete.
 > Project hosted <a href="https://doc-summary.onrender.com/">Here.</a>
 
 # Project Title: Document/Text Summarizing System.
