@@ -243,8 +243,8 @@ def extract_docx(word_document) -> str:
 
 
 def lang_detect(text:list) -> str:
-    # transformer = pickle.load(open("../WebApp/lang-transformer.pkl", "rb"))
-    # model = pickle.load(open("../WebApp/lang-model.pkl", "rb"))
+    transformer = pickle.load(open("./lang-transformer.pkl", "rb"))
+    model = pickle.load(open("./lang-model.pkl", "rb"))
 
-    # language = model.predict(transformer.transform(text))[0]
-    return("language")
+    language = model.predict(transformer.transform(text))[0]
+    return(language)
