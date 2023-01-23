@@ -2,10 +2,10 @@
 import nltk
 import docx
 import pickle
-import joblib
+# import joblib
 import pandas as pd
-nltk.download('stopwords')
-nltk.download('punkt')
+# nltk.download('stopwords')
+# nltk.download('punkt')
 from nltk.corpus import stopwords
 from nltk.tokenize import sent_tokenize
 from nltk.tokenize import word_tokenize
@@ -14,8 +14,8 @@ punctuation = punctuation + "’``''"
 from words_synonyms import words_synonyms
 stop_words = stopwords.words(stopwords.fileids())
 from sklearn.feature_extraction.text import CountVectorizer
-transformer = joblib.load("./lang-transformer.sav")
-model = joblib.load("./lang-model.sav")
+transformer = pickle.load(open("./lang-transformer.pkl", "rb"))
+model = pickle.load(open("./lang-model.pkl", "rb"))
 
 
 class Summarizer():

@@ -942,6 +942,11 @@ ul.cont li {
      color: white;
 }
 
+.fa-play-circle:active, .fa-pause:active{
+     background-color: #042431;
+     color: gray;
+}
+
 /* HIDING ALERT TEXT */
 #alert{
      color: #042431;
