@@ -248,7 +248,3 @@ def lang_detect(text:list) -> str:
 
     language = model.predict(transformer.transform(text))[0]
     return(language)
-
-
-# res = lang_detect(["This method of record keeping allowed for easy obtain to information and allowed libraries to expand their collections.In the 20th century, technology advancements led to the formation of computerized systems for record keeping in libraries. Today, libraries continue to use advanced technology to record and manage their collections.In conclusion, the origins of record keeping in libraries can be tracked back to ancient civilizations and has changed over time with the use of novel technologies."])
-# print(res)
