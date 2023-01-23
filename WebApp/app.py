@@ -1,5 +1,5 @@
 from summarizer_build import *
-from flask import Flask, render_template, request, flash
+from flask import Flask, render_template, request
 
 
 app = Flask(__name__)
@@ -52,7 +52,10 @@ def text_summary():
                 summary_length = len(final_summary)
                 original_text_length = len(original_text)
 
-                return render_template('result.html', final_summary = final_summary, topic_1 = topic_1, topic_2 = topic_2, original_text = original_text, summary_length = summary_length, original_text_length = original_text_length)
+                # Language detection
+                lang = lang_detect([original_text])
+
+                return render_template('result.html', final_summary = final_summary, topic_1 = topic_1, topic_2 = topic_2, original_text = original_text, summary_length = summary_length, original_text_length = original_text_length, lang_ = lang)
             except Exception:
                 # Returns 'Summary Undetermined' to the final-summary field and 'Undetermined' for other summary information.
                 message = "invalid"
@@ -104,7 +107,10 @@ def doc_summary():
             summary_length = len(final_summary)
             original_text_length = len(original_text)
 
-            return render_template('result.html', final_summary = final_summary, topic_1 = topic_1, topic_2 = topic_2, original_text = original_text, summary_length = summary_length, original_text_length = original_text_length)
+            # Language detection
+            lang = lang_detect([original_text])
+
+            return render_template('result.html', final_summary = final_summary, topic_1 = topic_1, topic_2 = topic_2, original_text = original_text, summary_length = summary_length, original_text_length = original_text_length, lang_ = lang)
         except Exception:
             message = "invalid"
             return render_template('docSummary.html', message_= message)
