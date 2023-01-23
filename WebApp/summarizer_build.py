@@ -2,7 +2,6 @@
 import nltk
 import docx
 import pickle
-# import joblib
 import pandas as pd
 nltk.download('stopwords')
 nltk.download('punkt')
