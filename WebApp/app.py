@@ -47,8 +47,8 @@ def text_summary():
                 final_summary = string_synonym_swap(sorted_summary)
 
                 # Getting final details
-                summary_length = len(final_summary)
-                original_text_length = len(original_text)
+                summary_length = len(final_summary.split())
+                original_text_length = len(original_text.split())
 
                 # Language detection
                 lang = lang_detect([original_text])
@@ -103,8 +103,8 @@ def doc_summary():
             final_summary = string_synonym_swap(sorted_summary)
 
             # Getting final details
-            summary_length = len(final_summary)
-            original_text_length = len(original_text)
+            summary_length = len(final_summary.split())
+            original_text_length = len(original_text.split())
 
             # Language detection + file format validation
             lang = lang_detect([original_text.lower()])
