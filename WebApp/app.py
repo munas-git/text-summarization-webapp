@@ -65,23 +65,24 @@ def doc_summary():
     if request.method == "GET":
         return render_template("docSummary.html")
     elif request.method == "POST":
-        # Getting document and churn level from form
-        doc = request.files['uploadFile']
-        churn_level = float(request.form.get('churn_level'))
-
-        # Checking file extention
-        if doc.filename.split(".")[-1] == "txt":
-            original_text = extract_txt(doc)
-        elif doc.filename.split(".")[-1] in ["doc", "docx"]:
-            original_text = extract_docx(doc)
-
-        # Initializing summarizer.
-        summarize = Summarizer(original_text, churn_level)
-
-        # Converting original text to word and sentence tokens.
-        word_sentence_tokens = summarize.word_sentence_tokenizer()
         
         try:
+            # Getting document and churn level from form
+            doc = request.files['uploadFile']
+            churn_level = float(request.form.get('churn_level'))
+
+            # Checking file extention
+            if doc.filename.split(".")[-1] == "txt":
+                original_text = extract_txt(doc)
+            elif doc.filename.split(".")[-1] in ["doc", "docx"]:
+                original_text = extract_docx(doc)
+
+            # Initializing summarizer.
+            summarize = Summarizer(original_text, churn_level)
+
+            # Converting original text to word and sentence tokens.
+            word_sentence_tokens = summarize.word_sentence_tokenizer()
+
             # separating word and sentence tokens from word_sentence_tokens tuple.
             sentence_tokens_list = word_sentence_tokens[0]
             word_tokens_list = word_sentence_tokens[1]
@@ -105,8 +106,8 @@ def doc_summary():
             summary_length = len(final_summary)
             original_text_length = len(original_text)
 
-            # Language detection
-            lang = lang_detect([original_text])
+            # Language detection + file format validation
+            lang = lang_detect([original_text.lower()])
 
             return render_template('result.html', final_summary = final_summary, topic_1 = topic_1, topic_2 = topic_2, original_text = original_text, summary_length = summary_length, original_text_length = original_text_length, lang_ = lang)
         except Exception:
