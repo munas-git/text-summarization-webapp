@@ -937,12 +937,12 @@ ul.cont li {
 }
 
 /* PLAY BUTTON FOR RESULT PAGE. */
-.fa-play-circle, .fa-pause{
+.fa-play-circle, .fa-pause, .fa-stop{
      background-color: #042431;
      color: white;
 }
 
-.fa-play-circle:active, .fa-pause:active{
+.fa-play-circle:active, .fa-pause:active, .fa-stop:active{
      background-color: #042431;
      color: gray;
 }

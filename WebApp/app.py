@@ -51,7 +51,7 @@ def text_summary():
                 original_text_length = len(original_text.split())
 
                 # Language detection
-                lang = lang_detect([original_text])
+                lang = lang_detect([original_text.lower()])
 
                 return render_template('result.html', final_summary = final_summary, topic_1 = topic_1, topic_2 = topic_2, original_text = original_text, summary_length = summary_length, original_text_length = original_text_length, lang_ = lang)
             except Exception:
