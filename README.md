@@ -19,9 +19,10 @@ The system is also capable of detecting the language of the body of text entered
 * JavaScript
 
 ## Snapshots of System.
+
 <img src= "https://user-images.githubusercontent.com/78413685/213757235-51cb51a7-ba31-45e3-b329-1cb30ec0802c.png" width="400" height="200" alt="Landing Page"><img src= "https://user-images.githubusercontent.com/78413685/213757922-06b03d9f-f3d2-49d4-aa93-564d08b9ca0e.png" width="400" height="200" alt="Text Summary Page">
 
-<img src= "https://user-images.githubusercontent.com/78413685/213759227-4a3d8eba-e14d-4067-a905-f4d1a6fe2d5a.png" width="400" height="200" alt="Document Upload Page"><img src= "https://user-images.githubusercontent.com/78413685/213804233-236306b6-2325-42c5-91bf-33022d073669.png" width="400" height="200" alt="Summary Result Page">
+<img src= "https://user-images.githubusercontent.com/78413685/213759227-4a3d8eba-e14d-4067-a905-f4d1a6fe2d5a.png" width="400" height="200" alt="Document Upload Page"><img src= "https://user-images.githubusercontent.com/78413685/214431479-aae08584-b96e-4934-a205-45a315d6cb94.png" width="400" height="200" alt="Summary Result Page">
 
 
 ## Demo of System.
