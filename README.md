@@ -3,7 +3,7 @@
 <img src= "https://user-images.githubusercontent.com/78413685/215292334-dfa2c9ae-0b2c-4273-8491-755da49e93e5.png" width="200" height="150">
 
 
-# Project Title: Document/Text Summarizing System.
+# Project Title: Extractive document/text Summarizing System.
 ## Project Description.
 The document summarizing system was done as my final year project in partial fulfilment of the reqirements for the award of Bachelor of Science B.Sc. (HONS) in Software Engineering at Babcock university.   
 
