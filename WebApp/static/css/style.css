@@ -684,11 +684,11 @@ button {
      font-weight: 500;
      border: #00aeef solid 3px;
      color: #f9fcfd;
-     padding: 8px 0px;
-     margin: 0 auto;
+     padding: 10px 0px;
+     margin: 4px;
      max-width: 180px;
      width: 100%;
-     display: block;
+     display: inline;
      border-radius: 30px;
      margin-top: 30px;
 }
@@ -844,10 +844,11 @@ ul.cont li {
      border-color: #00aeef;
      color: white;
      padding: 8px 0px;
-     margin: 0 auto;
+     margin: 4px;
+     width: 200px;
      max-width: 180px;
      width: 100%;
-     display: block;
+     display: inline;
      border-radius: 30px;
      margin-top: 30px;
 }

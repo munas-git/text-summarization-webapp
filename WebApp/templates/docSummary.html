@@ -98,13 +98,15 @@
                            <input accept=.doc,.docx,.txt type=file name="uploadFile" class="drop-zone__input" required>
                      </div>
                      <div class="doc-radio-div">
-                           <input type="radio" name="churn_level" id="short" value="0.3" required>
+                           <input type="radio" name="churn_level" id="short" value="0.3">
                            <label for="short">Short</label>
                            <input type="radio" name="churn_level" id="medium" value="0.5">
                            <label for="medium">Medium  </label>
                            <input type="radio" name="churn_level" id="long" value="0.7">
                            <label for="long">Long</label>
-                           <button class="send_btn" type="submit">Summarize</button>
+                           <br>
+                           <button class= "send_btn" name="sum_type" id = "1" type="submit">Abstractive</button>  
+                           <button class= "send_btn" name="sum_type" id = "0" type="submit">Extractive</button>
                      </div>
                   </form>
                   </div>

@@ -1,10 +1,12 @@
 # Importing important libraries.
 import nltk
 import docx
+import torch
 import pickle
 import pandas as pd
 nltk.download('stopwords')
 nltk.download('punkt')
+from transformers import pipeline
 from nltk.corpus import stopwords
 from nltk.tokenize import sent_tokenize
 from nltk.tokenize import word_tokenize
@@ -191,6 +193,17 @@ def string_synonym_swap(text: str) -> str:
                 string += token
     string = string.strip()
     return(string)
+
+
+def abs_summary(text:str, churn_level:float) -> str:
+
+    # Calculating minimum and maximum summary length.
+    min = int((churn_level * len(text.split())/2))
+    max = int(churn_level * len(text.split()))
+    summarizer = pipeline("summarization", model= "sshleifer/distilbart-cnn-12-6")
+    summary = summarizer(text, min_length=min, max_length=max, do_sample = False)
+    summary = summary[0]["summary_text"].strip()
+    return summary
 
 
 def extract_txt(text_document) -> str:

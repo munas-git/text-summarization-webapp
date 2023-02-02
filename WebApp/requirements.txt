@@ -16,6 +16,8 @@ regex==2022.10.31
 scikit-learn==1.0.2
 scipy==1.7.3
 six==1.16.0
+tensorflow==2.9.2
 threadpoolctl==3.1.0
+transformers==4.26.0
 tqdm==4.64.1
 Werkzeug==2.2.2
