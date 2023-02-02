@@ -18,11 +18,11 @@ scipy==1.7.3
 six==1.16.0
 tensorflow==2.9.2
 threadpoolctl==3.1.0
-torch @ https://download.pytorch.org/whl/cu116/torch-1.13.1%2Bcu116-cp38-cp38-linux_x86_64.whl
-torchaudio @ https://download.pytorch.org/whl/cu116/torchaudio-0.13.1%2Bcu116-cp38-cp38-linux_x86_64.whl
+torch==1.13.1
+torchaudio==0.13.1
 torchsummary==1.5.1
 torchtext==0.14.1
-torchvision @ https://download.pytorch.org/whl/cu116/torchvision-0.14.1%2Bcu116-cp38-cp38-linux_x86_64.whl
+torchvision==0.14.1
 transformers==4.26.0
 tqdm==4.64.1
 Werkzeug==2.2.2
