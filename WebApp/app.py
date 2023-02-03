@@ -100,7 +100,7 @@ def doc_summary():
             # Getting document and churn level from form
             doc = request.files['uploadFile']
             churn_level = float(request.form.get('churn_level'))
-            sum_type = int(request.form.get(sum_type))
+            sum_type = int(request.form.get('sum_type'))
 
             # Checking file extention
             if doc.filename.split(".")[-1] == "txt":
