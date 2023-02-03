@@ -676,7 +676,7 @@ button {
      border-bottom: #fff solid 1px;
 }
 
-.main_form .send_btn, .but {
+.main_form .send_btn{
      font-size: 17px;
      transition: ease-in all 0.5s;
      background-color: transparent;
@@ -692,6 +692,23 @@ button {
      border-radius: 30px;
      margin-top: 30px;
 }
+/* For download button */
+.but{
+     font-size: 17px;
+     transition: ease-in all 0.5s;
+     background-color: transparent;
+     text-transform: uppercase;
+     font-weight: 500;
+     border: #00aeef solid 3px;
+     color: #f9fcfd;
+     padding: 10px 0px;
+     margin: 0 auto;
+     max-width: 180px;
+     width: 100%;
+     display: block;
+     border-radius: 30px;
+     margin-top: 30px;
+} 
 
 
 .main_form .send_btn:hover, .but:hover {
