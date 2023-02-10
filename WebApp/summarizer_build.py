@@ -14,6 +14,7 @@ from nltk.tokenize import word_tokenize
 from string import punctuation
 punctuation = punctuation + "’``''"
 from words_synonyms import words_synonyms
+openai.api_key =  os.getenv("OPENAI_API_KEY")
 stop_words = stopwords.words(stopwords.fileids())
 from sklearn.feature_extraction.text import CountVectorizer
 transformer = pickle.load(open("./lang-transformer.pkl", "rb"))
@@ -212,8 +213,6 @@ def gpt_abs_summary(text:str, churn_level:float):
     """
     Open AI extractive summary function. For this function to work, an OpenAI key needs to be supplies below
     """
-    # API Key goes here.
-    openai.api_key = os.getenv("OPENAI_API_KEY")
 
     if churn_level == 0.3:
         sum_type = "short"
@@ -225,7 +224,7 @@ def gpt_abs_summary(text:str, churn_level:float):
     
     response = openai.Completion.create(
     model="text-davinci-003",
-    prompt=f"Help me with a {sum_type} of this text please: {text}",
+    prompt="Help me with a "+sum_type+" summary of this: "+text,
     temperature=0.7,
     max_tokens=max,
     top_p=1.0,
