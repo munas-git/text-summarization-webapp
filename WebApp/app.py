@@ -58,7 +58,7 @@ def text_summary():
             
             else: 
                 # Abstractive summary
-                final_summary = gpt_abs_summary(original_text, churn_level)
+                final_summary = gpt_abs_summary(original_text.strip().replace("\n", " "), churn_level)
 
                 # Other info
                 summarize = Summarizer(original_text, churn_level)
@@ -143,7 +143,7 @@ def doc_summary():
                 lang = lang_detect([original_text.lower()])
             else:
                 # Abstractive summary
-                final_summary = gpt_abs_summary(original_text, churn_level)
+                final_summary = gpt_abs_summary(original_text.strip().replace("\n", " "), churn_level)
 
                 # Other info
                 summarize = Summarizer(original_text, churn_level)
