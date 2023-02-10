@@ -224,7 +224,7 @@ def gpt_abs_summary(text:str, churn_level:float):
     
     response = openai.Completion.create(
     model="text-davinci-003",
-    prompt="Help me with a "+sum_type+" summary of this: "+text,
+    prompt="Help me with a "+sum_type+" summary of this: "+text.strip().replace("\n", " ").replace("\t", " "),
     temperature=0.7,
     max_tokens=max,
     top_p=1.0,
