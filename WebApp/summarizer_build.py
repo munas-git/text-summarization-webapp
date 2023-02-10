@@ -220,7 +220,7 @@ def gpt_abs_summary(text:str, churn_level:float):
         sum_type == "medium length"
     elif churn_level == 0.7:
         sum_type = "long"
-    max = int(churn_level * len(text.split()))
+    max = int(len(text.split()))
     
     response = openai.Completion.create(
     model="text-davinci-003",
