@@ -1,6 +1,6 @@
 #### Project Status: Complete.
 > Project hosted <a href="https://doc-summary.onrender.com/">Here.</a> Click link or scan QR Code below.
-<img src= "https://user-images.githubusercontent.com/78413685/215292334-dfa2c9ae-0b2c-4273-8491-755da49e93e5.png" width="200" height="150">
+<img src= "https://user-images.githubusercontent.com/78413685/215292334-dfa2c9ae-0b2c-4273-8491-755da49e93e5.png" width="200" height="170">
 
 
 # Project Title: Extractive document/text Summarizing System.
