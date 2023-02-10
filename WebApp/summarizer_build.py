@@ -221,15 +221,17 @@ def gpt_abs_summary(text:str, churn_level:float):
     elif churn_level == 0.7:
         sum_type = "long"
     max = int(len(text.split()))
-    
+
+    message= "Create a "+sum_type+" summary of this for me please: "+text.strip().replace("\n", " ")
+
     response = openai.Completion.create(
-    model="text-davinci-003",
-    prompt="Help me with a "+sum_type+" summary of this: "+text.strip().replace("\n", " ").replace("\t", " "),
-    temperature=0.7,
-    max_tokens=max,
-    top_p=1.0,
-    frequency_penalty=0.0,
-    presence_penalty=0.0
+        model="text-davinci-003",
+        prompt=message,
+        temperature=0.7,
+        max_tokens=max,
+        top_p=1.0,
+        frequency_penalty=0.0,
+        presence_penalty=0.0
     )
 
     summary = response["choices"][0]["text"].strip()
