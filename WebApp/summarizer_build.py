@@ -1,7 +1,7 @@
 # Importing important libraries.
+import os
 import nltk
 import docx
-# import torch
 import pickle
 import openai
 import pandas as pd
@@ -196,15 +196,16 @@ def string_synonym_swap(text: str) -> str:
     return(string)
 
 
-def abs_summary(text:str, churn_level:float) -> str:
+# Function was supposed to be for Hugging face transformer
+# def abs_summary(text:str, churn_level:float) -> str:
 
     # Calculating minimum and maximum summary length.
-    min = int((churn_level * len(text.split())/2))
-    max = int(churn_level * len(text.split()))
+    # min = int((churn_level * len(text.split())/2))
+    # max = int(churn_level * len(text.split()))
     # summarizer = pipeline("summarization", model= "sshleifer/distilbart-cnn-12-6")
     # summary = summarizer(text, min_length=min, max_length=max, do_sample = False)
-    summary = """summary[0]["summary_text"].strip()"""
-    return summary
+    # summary = """summary[0]["summary_text"].strip()"""
+    # return summary
 
 
 def gpt_abs_summary(text:str, churn_level:float):
@@ -212,7 +213,7 @@ def gpt_abs_summary(text:str, churn_level:float):
     Open AI extractive summary function. For this function to work, an OpenAI key needs to be supplies below
     """
     # API Key goes here.
-    # openai.api_key = os.getenv("OPENAI_API_KEY")
+    openai.api_key = os.getenv("OPENAI_API_KEY")
 
     if churn_level == 0.3:
         sum_type = "short"
@@ -222,15 +223,17 @@ def gpt_abs_summary(text:str, churn_level:float):
         sum_type = "long"
     max = int(churn_level * len(text.split()))
     
-    summary = openai.Completion.create(
+    response = openai.Completion.create(
     model="text-davinci-003",
-    prompt=f"Help me with a {sum_type} of this text please:\n\n{text}",
+    prompt=f"Help me with a {sum_type} of this text please: {text}",
     temperature=0.7,
     max_tokens=max,
     top_p=1.0,
     frequency_penalty=0.0,
     presence_penalty=0.0
     )
+
+    summary = response["choices"][0]["text"].strip()
     return summary
 
 
