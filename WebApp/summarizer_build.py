@@ -286,9 +286,9 @@ def extract_docx(word_document) -> str:
         if sent_ence == '':
             continue
         else:
-            full_text_string += re.sub(r'\s+', " ",sent_ence)
+            full_text_string += sent_ence
     # Removing white space at start of entire text.
-    full_text_string = full_text_string.strip()
+    full_text_string = full_text_string
     return(full_text_string)
 
 
