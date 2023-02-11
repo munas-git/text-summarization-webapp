@@ -17,7 +17,7 @@ def text_summary():
         return render_template('textSummary.html')
     elif request.method == 'POST':
         # Getting original text data and churn_level from form.
-        original_text = request.form.get('original_text')
+        original_text = re.sub(r'\s+', " ",request.form.get('original_text'))
         churn_level = float(request.form.get('churn_level'))
         sum_type = int(request.form.get('sum_type'))
 

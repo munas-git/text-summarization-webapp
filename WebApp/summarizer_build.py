@@ -223,7 +223,8 @@ def gpt_abs_summary(text:str, churn_level:float):
         sum_type = "long"
     max = int(len(text.split()))
 
-    message= "Create a "+sum_type+" summary of this for me please: "+text.strip().replace("\n", " ")
+    # Extra space in attempt to resolve EOF.
+    message= "Create a "+sum_type+" summary of this for me please: "+text+" "
 
     response = openai.Completion.create(
         model="text-davinci-003",
