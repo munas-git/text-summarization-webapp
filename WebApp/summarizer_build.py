@@ -276,8 +276,8 @@ def extract_docx(word_document) -> str:
     paragraphs = document.paragraphs
     # Loop to extract text from paragraphs and append texts to list
     for paragraph in paragraphs:
-        sentence = paragraph.text# .strip()
-        # The extra space there seperates paracgarps.
+        sentence = paragraph.text.strip()
+        # The extra space there seperates paragraps.
         full_text_list.append(sentence+" ")
     # Loop to append sentences to sentences string. It ignors empty sentences in the list.
     for sent_ence in full_text_list:
@@ -286,7 +286,7 @@ def extract_docx(word_document) -> str:
         else:
             full_text_string += sent_ence
     # Removing white space at start of entire text.
-    full_text_string = full_text_string #.strip()
+    full_text_string = full_text_string.strip()
     return(full_text_string)
 
 
