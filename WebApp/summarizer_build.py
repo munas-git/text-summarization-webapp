@@ -222,7 +222,8 @@ def gpt_abs_summary(text:str, churn_level:float):
     elif churn_level == 0.7:
         sum_type = "long"
     max = int(len(text.split()))
-
+    # This solves abstractive summary issue.
+    text =" ".join(text.split())
     # Extra space in attempt to resolve EOF.
     message= "Create a "+sum_type+" summary of this for me please: "+text.replace("\n", " ").strip()+" "
 
