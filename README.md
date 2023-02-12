@@ -28,8 +28,7 @@ The system is also capable of detecting the language of the body of text entered
 
 
 ## Demo of System.
-https://user-images.githubusercontent.com/78413685/214082636-9fe242b0-8657-408f-82e6-d3078a6a379b.mp4
-
+https://user-images.githubusercontent.com/78413685/218328293-cc719537-90ed-4fff-9146-6095b641fe30.mp4
 
 > Extra Notes   
 ##### The system UI was a template gotten from <a href="https://www.free-css.com/free-css-templates/page277/blueneek">free-css</a> however, I made several adjustments in order to suite my taste and my project requirement. I'm currently not very good with HTML and CSS 😅.   
