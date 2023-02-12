@@ -18,6 +18,8 @@ def text_summary():
     elif request.method == 'POST':
         # Getting original text data and churn_level from form.
         original_text = request.form.get('original_text')
+        # Extracting only first 1,500 words.
+        original_text = " ".join(original_text.split()[:1500])
         churn_level = float(request.form.get('churn_level'))
         sum_type = int(request.form.get('sum_type'))
 

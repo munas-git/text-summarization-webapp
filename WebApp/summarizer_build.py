@@ -255,6 +255,8 @@ def extract_txt(text_document) -> str:
     """
     # Decodes byte string and cleans decoded content.
     full_text_string = text_document.read().decode("utf-8").strip()
+    # Returning first 1,500 words.
+    full_text_string = " ".join(full_text_string.split()[:1500])
     return(full_text_string)
 
 
@@ -288,8 +290,8 @@ def extract_docx(word_document) -> str:
             continue
         else:
             full_text_string += sent_ence
-    # Removing white space at start of entire text.
-    full_text_string = full_text_string
+    # Returning first 1,500 words.
+    full_text_string = " ".join(full_text_string.split()[:1500])
     return(full_text_string)
 
 

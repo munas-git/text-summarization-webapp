@@ -101,7 +101,7 @@
                <div class="col-md-12">
                   <div class="clients_box">
                      <form method="POST">
-                        <textarea class="summary-text-area" name="original_text" required></textarea>
+                        <textarea class="summary-text-area" id="summary-text-area" oninput="lengthCheck()" name="original_text" required></textarea>
                         <br>
                         <input type="radio" name="churn_level" id="short" value="0.3" required>
                         <label for="short">Short</label>
@@ -148,7 +148,7 @@
       <!-- end footer -->
       <!-- Internal script for alert -->
       <!-- Javascript files-->
-      <script src="../static/js/alert.js"></script>
+      <script src="../static/js/alerts.js"></script>
       <script src="../static/js/jquery.min.js"></script>
       <script src="../static/js/popper.min.js"></script>
       <script src="../static/js/bootstrap.bundle.min.js"></script>
