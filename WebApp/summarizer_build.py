@@ -2,13 +2,14 @@
 import re
 import os
 import nltk
+from dotenv import load_dotenv
+load_dotenv()
 import docx
 import pickle
 import openai
 import pandas as pd
 nltk.download('stopwords')
 nltk.download('punkt')
-# from transformers import pipeline
 from nltk.corpus import stopwords
 from nltk.tokenize import sent_tokenize
 from nltk.tokenize import word_tokenize
